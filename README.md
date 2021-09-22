@@ -1,1 +1,1 @@
-# NVIM
+# Install

@@ -63,6 +63,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " Vim tmux
   Plug 'christoomey/vim-tmux-navigator'
+
+  " Markdown preview
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 " Automatically install missing plugins on startup
