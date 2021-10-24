@@ -16,10 +16,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Keeping up to date with master
   Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
-  " Nvim tree
-  Plug 'kyazdani42/nvim-web-devicons' " for file icons  
-  Plug 'kyazdani42/nvim-tree.lua'
-
   " Air line
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'  

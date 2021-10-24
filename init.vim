@@ -11,7 +11,6 @@ source $HOME/.config/nvim/plug-config/dashboard.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
 source $HOME/.config/nvim/plug-config/comment.vim
 source $HOME/.config/nvim/plug-config/multiple-cursors.vim
-source $HOME/.config/nvim/plug-config/nvimtree.vim
 
 lua require'init'
 
