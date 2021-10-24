@@ -1,1 +1,1 @@
-nvim.builtin.which_key.mappings["e"] = { ":NvimTreeToggle<cr>", "Explorer"}
+nvim.builtin.which_key.mappings["e"] = { ":CocCommand explorer<cr>", "Explorer"}
