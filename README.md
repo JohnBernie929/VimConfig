@@ -17,3 +17,9 @@ You can run this command
 ```bash
 rm ~\AppData\Local\nvim.git -Force
 ```
+
+# Copyright
+
+Copyright: [LunarVim](https://github.com/LunarVim/LunarVim)
+
+repo [Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
