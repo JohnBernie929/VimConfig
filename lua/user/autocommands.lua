@@ -24,6 +24,4 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
-
-  autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()
 ]]
