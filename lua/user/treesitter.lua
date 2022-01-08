@@ -19,5 +19,17 @@ configs.setup {
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    colors = {
+      "#E06C75",
+      "#E5C07B",
+      "#98C379",
+      "#56B6C2",
+      "#61AFEF",
+      "#C678DD"
+    },
   }
 }
