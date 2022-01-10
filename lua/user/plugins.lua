@@ -59,12 +59,20 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "unblevable/quick-scope"
+  use "andymass/vim-matchup"
   use "norcalli/nvim-colorizer.lua"
   use "nacro90/numb.nvim"
   use "folke/zen-mode.nvim"
   use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
+  use "MattesGroeger/vim-bookmarks"
+  use "lunarvim/vim-solidity"
   use "blackCauldron7/surround.nvim"
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+  }
 
   -- Colorschemes
   -- use "lunarvim/colorschemes"
@@ -88,9 +96,13 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "filipdutescu/renamer.nvim"
+  use "simrat39/symbols-outline.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use 'tom-anders/telescope-vim-bookmarks.nvim'
+  use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Treesitter
   use {

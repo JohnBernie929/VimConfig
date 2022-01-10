@@ -63,14 +63,33 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+-- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+-- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+-- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+-- Command --
+-- Menu navigation
+keymap("c", "<C-j>", 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true })
+keymap("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true })
+
+-- Telescope
+keymap("n", "<leader>sf", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
+keymap("n", "<leader>st", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+keymap("n", "<leader>sb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- Custom
+keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
+keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<F3>", ":e .<cr>", opts)
+keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
+keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
+keymap("n", "<F6>", [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]], opts)
+keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
+keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
+keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
