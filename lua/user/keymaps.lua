@@ -93,3 +93,15 @@ keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
 keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
 keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
+keymap(
+  "n",
+  "<C-p>",
+  "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+  opts
+)
+keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
+keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
+keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
+keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
+vim.api.nvim_set_keymap('n', '<CR>', '<cmd>NeoZoomToggle<CR>', { noremap=true, silent=true, nowait=true })

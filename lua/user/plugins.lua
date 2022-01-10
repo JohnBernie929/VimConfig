@@ -68,6 +68,13 @@ return packer.startup(function(use)
   use "MattesGroeger/vim-bookmarks"
   use "lunarvim/vim-solidity"
   use "blackCauldron7/surround.nvim"
+  use "Shatur/neovim-session-manager"
+  use "rcarriga/nvim-notify"
+  use "tversteeg/registers.nvim"
+  use "metakirby5/codi.vim"
+  use {
+    "nyngwang/NeoZoom.lua",
+  }
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
