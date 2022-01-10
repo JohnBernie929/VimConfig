@@ -35,5 +35,8 @@ configs.setup {
       "#61AFEF",
       "#C678DD"
     },
-  }
+  },
+    playground = {
+		enable = true,
+	},
 }
