@@ -85,7 +85,8 @@ return packer.startup(function(use)
 
   -- Colorschemes
   -- use "lunarvim/colorschemes"
-  use "lunarvim/darkplus.nvim"
+  -- use "lunarvim/darkplus.nvim"
+  use "LunarVim/onedarker.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
