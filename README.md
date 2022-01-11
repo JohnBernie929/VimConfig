@@ -12,7 +12,7 @@ git checkout Windows
 
 # If you do not want to update my config
 
-You can run this command
+You can run this command in powershell
 
 ```bash
 rm ~\AppData\Local\nvim.git -Force
