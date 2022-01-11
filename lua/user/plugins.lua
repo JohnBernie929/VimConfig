@@ -59,9 +59,12 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "unblevable/quick-scope"
+  use "phaazon/hop.nvim"
   use "andymass/vim-matchup"
   use "norcalli/nvim-colorizer.lua"
+  use "windwp/nvim-spectre"
   use "nacro90/numb.nvim"
+  use "monaqa/dial.nvim"
   use "folke/zen-mode.nvim"
   use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
@@ -74,9 +77,8 @@ return packer.startup(function(use)
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
   use "metakirby5/codi.vim"
-  use {
-    "nyngwang/NeoZoom.lua",
-  }
+  use "nyngwang/NeoZoom.lua"
+  use "terryma/vim-multiple-cursors"
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
