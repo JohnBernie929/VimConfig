@@ -90,6 +90,5 @@ lualine.setup({
 		lualine_z = {},
 	},
 	tabline = {},
-	-- extensions = { "quickfix", "toggleterm" },
-	extensions = { "symbols-outline" },
+	extensions = {},
 })

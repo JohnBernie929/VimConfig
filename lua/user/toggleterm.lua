@@ -68,3 +68,9 @@ local python = Terminal:new({ cmd = "python", hidden = true })
 function _PYTHON_TOGGLE()
 	python:toggle()
 end
+
+-- Customs
+local live_server = Terminal:new({ cmd = "live-server .", hidden = true })
+function _LIVE_SERVER_TOGGLE()
+  live_server:toggle()
+end

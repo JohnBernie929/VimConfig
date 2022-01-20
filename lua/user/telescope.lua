@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+telescope.load_extension "media_files"
 
 telescope.setup {
   defaults = {
@@ -88,10 +89,10 @@ telescope.setup {
   },
   extensions = {
     media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        filetypes = {"png", "webp", "jpg", "jpeg"},
-        find_cmd = "rg" -- find command (defaults to `fd`)
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = { "png", "webp", "jpg", "jpeg" },
+      find_cmd = "rg", -- find command (defaults to `fd`)
     },
     file_browser = {
       -- theme = "ivy",
@@ -112,12 +113,10 @@ telescope.setup {
       require("telescope.themes").get_dropdown {
         previewer = false,
         -- even more opts
-      }
-    }
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
+      },
+    },
   },
 }
+
+telescope.load_extension "ui-select"
+telescope.load_extension "file_browser"

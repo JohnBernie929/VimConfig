@@ -89,6 +89,7 @@ return packer.startup(function(use)
   -- use "lunarvim/colorschemes"
   -- use "lunarvim/darkplus.nvim"
   use "LunarVim/onedarker.nvim"
+  use "folke/tokyonight.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -103,6 +104,8 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "hrsh7th/cmp-vsnip"
+  use "hrsh7th/vim-vsnip"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -121,6 +124,9 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "tom-anders/telescope-vim-bookmarks.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
+  use "nvim-telescope/telescope-ui-select.nvim"
+  use "nvim-telescope/telescope-file-browser.nvim"
 
   -- Treesitter
   use {
@@ -139,6 +145,12 @@ return packer.startup(function(use)
   use "ruifm/gitlinker.nvim"
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
+
+  -- DAP
+  use "mfussenegger/nvim-dap"
+  use "theHamsta/nvim-dap-virtual-text"
+  use "rcarriga/nvim-dap-ui"
+  use "Pocco81/DAPInstall.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
