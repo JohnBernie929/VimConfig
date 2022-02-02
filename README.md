@@ -1,9 +1,9 @@
 # VimConfig for Windows
 
-Clone this repo to ~/AppData/Local/nvim
+Clone this repo to C:/<User>/AppData/Local/nvim
 
 ```bash
-git clone https://github.com/JohnBernie929/VimConfig.git ~\Appdata\Local\nvim
+git clone https://github.com/JohnBernie929/VimConfig.git $HOME\Appdata\Local\nvim
 ```
 
 ```
