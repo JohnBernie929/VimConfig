@@ -3,13 +3,15 @@ if not status_ok then
   return
 end
 
+local icons = require("user.icons")
+
 local actions = require "telescope.actions"
 telescope.load_extension "media_files"
 
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
+    prompt_prefix = icons.ui.Telescope .. " ",
     selection_caret = " ",
     path_display = { "smart" },
 
@@ -118,5 +120,5 @@ telescope.setup {
   },
 }
 
-telescope.load_extension "ui-select"
-telescope.load_extension "file_browser"
+require("telescope").load_extension "ui-select"
+require("telescope").load_extension "file_browser"

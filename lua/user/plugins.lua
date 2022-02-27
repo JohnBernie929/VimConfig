@@ -47,7 +47,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  use { "kyazdani42/nvim-tree.lua", commit = "f183c7f31197ae499c3420341fb8b275636a49b8" }
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
@@ -72,12 +72,13 @@ return packer.startup(function(use)
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
   use "lunarvim/vim-solidity"
-  use "blackCauldron7/surround.nvim"
+  use "Mephistophiles/surround.nvim"
   use "Shatur/neovim-session-manager"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
   use "metakirby5/codi.vim"
   use "nyngwang/NeoZoom.lua"
+  use "SmiteshP/nvim-gps"
   use "terryma/vim-multiple-cursors"
   use {
     "iamcco/markdown-preview.nvim",
@@ -92,7 +93,7 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use { "hrsh7th/nvim-cmp", commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7" } -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -100,6 +101,27 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
+  use {
+    "tzachar/cmp-tabnine",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+        run_on_every_keystroke = true,
+        snippet_placeholder = "..",
+        ignored_file_types = { -- default is not to ignore
+          -- uncomment to ignore in lua:
+          -- lua = true
+        }
+      }
+    end,
+
+    after = "nvim-cmp",
+    run='powershell ./install.ps1',
+    requires = 'hrsh7th/nvim-cmp'
+  }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -120,6 +142,8 @@ return packer.startup(function(use)
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   }
+  use "github/copilot.vim"
+  use "RRethy/vim-illuminate"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -134,7 +158,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use "ChristianChiarulli/nvim-ts-rainbow"
+  use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use "windwp/nvim-ts-autotag"
   use "mizlan/iswap.nvim"
@@ -145,6 +169,7 @@ return packer.startup(function(use)
   use "ruifm/gitlinker.nvim"
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
+  use "rhysd/conflict-marker.vim"
 
   -- DAP
   use "mfussenegger/nvim-dap"

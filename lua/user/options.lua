@@ -4,6 +4,7 @@ local options = {
   cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
+  colorcolumn = "120",
   fileencoding = "utf-8",                  -- the encoding written to a file
   hlsearch = true,                         -- highlight all matches on previous search pattern
   ignorecase = true,                       -- ignore case in search patterns
@@ -32,7 +33,7 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  guifont = "Hack NF:h12",                 -- the font used in graphical neovim applications
+  -- guifont = "Hack NF:12",               -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append "c"
@@ -41,7 +42,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.cmd [[let g:python3_host_prog = "C:\Python310\python.exe"]]
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

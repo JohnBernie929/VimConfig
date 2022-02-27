@@ -4,7 +4,15 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = {
+    "cpp",
+    "lua",
+    "python",
+    "rust",
+    "c",
+    "javascript",
+    "html",
+  }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
@@ -28,12 +36,9 @@ configs.setup {
     enable = true,
     extended_mode = true,
     colors = {
-      "#E06C75",
-      "#E5C07B",
-      "#98C379",
-      "#56B6C2",
-      "#61AFEF",
-      "#C678DD"
+      "Gold",
+      "Orchid",
+      "DodgerBlue",
     },
     disable = { "html" }
   },
