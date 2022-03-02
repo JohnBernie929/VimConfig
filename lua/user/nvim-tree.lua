@@ -1,5 +1,7 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
+local icons = require('user.icons')
+
 vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
@@ -53,10 +55,10 @@ nvim_tree.setup {
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = icons.diagnostics.Hint,
+      info = icons.diagnostics.Information,
+      warning = icons.diagnostics.Warning,
+      error = icons.diagnostics.Error,
     },
   },
   update_focused_file = {
