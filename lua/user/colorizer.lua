@@ -15,6 +15,6 @@ colorizer.setup(
 	  css      = true;         -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
 	  css_fn   = true;         -- Enable all CSS *functions*: rgb_fn, hsl_fn
     -- Available modes: foreground, background, virtualtext
-    mode     = 'virtualtext'; -- Set the display mode.
+    mode     = 'background'; -- Set the display mode.
   }
 )

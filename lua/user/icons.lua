@@ -15,7 +15,7 @@ return {
     Function = " ",
     Interface = "ﰮ ",
     Keyword = " ",
-    Method = " ",
+    Method = "",
     Module = " ",
     Operator = "",
     Property = "",

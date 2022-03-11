@@ -61,10 +61,10 @@ return packer.startup(function(use)
   use "unblevable/quick-scope"
   use "phaazon/hop.nvim"
   use "andymass/vim-matchup"
-  use "br1anchen/nvim-colorizer.lua"
-  use "windwp/nvim-spectre"
   use "nacro90/numb.nvim"
   use "monaqa/dial.nvim"
+  use "br1anchen/nvim-colorizer.lua"
+  use "windwp/nvim-spectre"
   use "folke/zen-mode.nvim"
   use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
@@ -73,13 +73,13 @@ return packer.startup(function(use)
   use "MattesGroeger/vim-bookmarks"
   use "lunarvim/vim-solidity"
   use "Mephistophiles/surround.nvim"
+  use "tpope/vim-repeat"
   use "Shatur/neovim-session-manager"
   use "rcarriga/nvim-notify"
   use "tversteeg/registers.nvim"
-  use "metakirby5/codi.vim"
+  -- use "metakirby5/codi.vim"
   use "nyngwang/NeoZoom.lua"
   use "SmiteshP/nvim-gps"
-  use "terryma/vim-multiple-cursors"
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
@@ -133,7 +133,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use { "jose-elias-alvarez/null-ls.nvim", commit = "15d3aabc2b440293ecf6c85f25ca9fa645a468ae" } -- for formatters and linters
   use "filipdutescu/renamer.nvim"
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
