@@ -18,5 +18,5 @@ sudo pacman -S neovim
 
 ```bash
 mkdir -p ~/.config/nvim \
-git clone https://github.com/ZepbachVNTM/NVIM.git ~/.config/nvim
+git clone https://github.com/hd929/NVIM.git ~/.config/nvim
 ```
