@@ -15,6 +15,7 @@ return {
   { "lukas-reineke/indent-blankline.nvim" },
   { "goolord/alpha-nvim" },
   { "folke/which-key.nvim" },
+  { "karb94/neoscroll.nvim" },
 
   -- Colorschemes
   { "folke/tokyonight.nvim" },

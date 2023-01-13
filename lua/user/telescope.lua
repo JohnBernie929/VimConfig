@@ -5,10 +5,12 @@ end
 
 local actions = require "telescope.actions"
 
+local icons = require "user.icons"
+
 telescope.setup {
   defaults = {
 
-    prompt_prefix = " ",
+    prompt_prefix = icons.ui.Telescope,
     selection_caret = " ",
     path_display = { "smart" },
 
