@@ -86,6 +86,7 @@ local mappings = {
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
+  ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -186,5 +187,21 @@ local mappings = {
   },
 }
 
+local vopts = {
+  mode = "v", -- VISUAL mode
+  prefix = "<leader>",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+
+local vmappings = {
+  ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Comment" },
+  -- s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run range" },
+  -- z = { "<cmd>TZNarrow<cr>", "Narrow" },
+}
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
+which_key.register(vmappings, vopts)

@@ -33,6 +33,10 @@ return {
   { "lunarvim/darkplus.nvim" },
   { "folke/todo-comments.nvim" },
 
+  -- Color
+  { "NvChad/nvim-colorizer.lua" },
+  { "nvim-colortils/colortils.nvim" },
+
   -- Cmp
   { "hrsh7th/nvim-cmp" }, -- The completion plugin
   { "hrsh7th/cmp-buffer" }, -- buffer completions
