@@ -29,7 +29,7 @@ vim.api.nvim_set_hl(0, "SLGitIcon", { fg = yellow, bg = gray })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = fg, bg = gray, bold = false })
 vim.api.nvim_set_hl(0, "SLProgress", { fg = purple, bg = gray })
 vim.api.nvim_set_hl(0, "SLLocation", { fg = blue, bg = gray })
-vim.api.nvim_set_hl(0, "SLIndent", { fg = fg, bg = gray })
+vim.api.nvim_set_hl(0, "SLIndent", { fg = white, bg = gray })
 vim.api.nvim_set_hl(0, "SLTermIcon", { fg = purple, bg = gray })
 vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = gray })
 vim.api.nvim_set_hl(0, "SLLSP", { fg = "#6b727f", bg = "NONE" })
@@ -54,7 +54,7 @@ local mode_color = {
   S = yellow,
   [""] = yellow,
   ic = red,
-  R = purple,
+  R = red,
   Rv = red,
   cv = blue,
   ce = blue,
@@ -138,8 +138,8 @@ local diagnostics = {
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
   symbols = {
-    error = "%#SLError#" .. icons.diagnostics.Error .. " " .. "%*",
-    warn = "%#SLWarning#" .. icons.diagnostics.Warning .. " " .. "%*",
+    error = "%#SLError#" .. icons.diagnostics.Error .. "%*",
+    warn = "%#SLWarning#" .. icons.diagnostics.Warning .. "%*",
   },
   colored = false,
   update_in_insert = false,
@@ -409,8 +409,8 @@ lualine.setup {
     icons_enabled = true,
     -- theme = "auto",
     theme = {
-    normal = {
-        a = { fg = white, bg = blue },
+      normal = {
+        a = { fg = fg, bg = bg },
         b = { fg = fg, bg = bg },
         c = { fg = fg, bg = bg },
       },

@@ -55,7 +55,7 @@ return {
   -- LSP
   { "neovim/nvim-lspconfig" }, -- enable LSP
   { "williamboman/mason.nvim" }, -- simple to use language server installer
-  { "williamboman/mason-lspconfig.nvim" },
+  { "williamboman/mason-lspconfig.nvim", lazy = true },
   { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
   { "j-hui/fidget.nvim" },
   { "lvimuser/lsp-inlayhints.nvim" },
