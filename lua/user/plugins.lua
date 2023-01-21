@@ -79,6 +79,14 @@ return {
     run = "cd js && npm ci",
   },
 
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },
+
   -- Motion
   {
     "phaazon/hop.nvim",
