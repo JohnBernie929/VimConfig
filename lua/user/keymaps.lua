@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -32,8 +32,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<C-l>", ":bnext<CR>", opts)
-keymap("n", "<C-h>", ":bprevious<CR>", opts)
+-- keymap("n", "<C-l>", ":bnext<CR>", opts)
+-- keymap("n", "<C-h>", ":bprevious<CR>", opts)
 keymap("n", "<C-q>", ":bwipeout<CR>", opts)
 
 -- Move text up and down

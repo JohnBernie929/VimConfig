@@ -37,6 +37,11 @@ return {
   { "NvChad/nvim-colorizer.lua" },
   { "nvim-colortils/colortils.nvim" },
 
+  -- Utility
+  { "stevearc/dressing.nvim" },
+  { "rcarriga/nvim-notify" },
+  { "ghillb/cybu.nvim" },
+
   -- Cmp
   { "hrsh7th/nvim-cmp" }, -- The completion plugin
   { "hrsh7th/cmp-buffer" }, -- buffer completions
@@ -83,7 +88,6 @@ return {
     "folke/noice.nvim",
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
     },
   },
 
