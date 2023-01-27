@@ -12,6 +12,8 @@ local colors = {
 
 vim.api.nvim_set_hl(0, "CybuFocus", { fg = colors.fg_alt, bg = colors.bg_alt })
 vim.api.nvim_set_hl(0, "CybuAdjacent", { fg = colors.fg, bg = colors.bg })
+vim.api.nvim_set_hl(0, "CybuBackground", { fg = colors.fg, bg = colors.bg })
+vim.api.nvim_set_hl(0, "CybuBorder", { fg = colors.fg_alt, bg = colors.bg })
 
 cybu.setup {
   position = {
