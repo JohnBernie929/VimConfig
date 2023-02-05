@@ -65,6 +65,7 @@ return {
   { "j-hui/fidget.nvim" },
   { "lvimuser/lsp-inlayhints.nvim" },
   { "RRethy/vim-illuminate" },
+  { "SmiteshP/nvim-navic" },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
@@ -81,7 +82,7 @@ return {
   { "is0n/jaq-nvim" },
   {
     "0x100101/lab.nvim",
-    run = "cd js && npm ci",
+    build = "cd js && npm ci",
   },
 
   {

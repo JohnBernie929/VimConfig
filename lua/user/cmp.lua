@@ -100,6 +100,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = "lab.quick_data", keyword_length = 4 },
   },
   sorting = {
     priority_weight = 2,

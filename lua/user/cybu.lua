@@ -3,12 +3,22 @@ if not ok then
   return
 end
 
+local colors_name = vim.g.colors_name
 local colors = {
   fg = "#c0caf5",
   fg_alt = "#7aa2f7",
   bg = "#1a1b26",
-  bg_alt = "#292e42"
+  bg_alt = "#292e42",
 }
+
+if colors_name == "tokyonight" then
+  colors = {
+    fg = "#c0caf5",
+    fg_alt = "#7aa2f7",
+    bg = "#1a1b26",
+    bg_alt = "#292e42",
+  }
+end
 
 vim.api.nvim_set_hl(0, "CybuFocus", { fg = colors.fg_alt, bg = colors.bg_alt })
 vim.api.nvim_set_hl(0, "CybuAdjacent", { fg = colors.fg, bg = colors.bg })
