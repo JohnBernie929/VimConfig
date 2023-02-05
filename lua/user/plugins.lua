@@ -66,6 +66,7 @@ return {
   { "lvimuser/lsp-inlayhints.nvim" },
   { "RRethy/vim-illuminate" },
   { "SmiteshP/nvim-navic" },
+  { "Exafunction/codeium.vim" },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
