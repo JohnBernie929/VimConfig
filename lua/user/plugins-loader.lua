@@ -28,4 +28,8 @@ end
 
 local plugins = require("user.plugins")
 
-lazy.setup(plugins)
+lazy.setup(plugins, {
+  ui = {
+    border = "rounded"
+  }
+})

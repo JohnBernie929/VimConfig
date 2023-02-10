@@ -5,33 +5,47 @@ return {
   { "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
   {
     "numToStr/Comment.nvim",
-    event = "BufRead",
+    keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
+    event = "User FileOpened",
   },
-  { "JoosepAlviste/nvim-ts-context-commentstring" },
-  { "kyazdani42/nvim-web-devicons" },
-  { "akinsho/bufferline.nvim" },
+  { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+  { "kyazdani42/nvim-web-devicons", lazy = true },
+  {
+    "akinsho/bufferline.nvim",
+    event = "User FileOpened",
+    enabled = false,
+  },
   { "moll/vim-bbye" },
-  { "nvim-lualine/lualine.nvim" },
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VimEnter",
+  },
   {
     "akinsho/toggleterm.nvim",
     event = "VeryLazy",
   },
-  { "ahmedkhalf/project.nvim" },
+  {
+    "ahmedkhalf/project.nvim",
+    event = "VimEnter",
+  },
   { "lewis6991/impatient.nvim" },
   { "lukas-reineke/indent-blankline.nvim" },
-  { "goolord/alpha-nvim" },
-  { "folke/which-key.nvim" },
+  {
+    "goolord/alpha-nvim",
+    event = "VimEnter",
+  },
+  { "folke/which-key.nvim", event = "VeryLazy" },
   { "karb94/neoscroll.nvim" },
   { "folke/zen-mode.nvim" },
 
   -- File Explorer
-  { "kyazdani42/nvim-tree.lua" },
-  { "tamago324/lir.nvim" },
+  { "kyazdani42/nvim-tree.lua", event = "User DirOpened" },
+  { "tamago324/lir.nvim", event = "User DirOpened" },
 
   -- Colorschemes
-  { "folke/tokyonight.nvim" },
+  { "folke/tokyonight.nvim", lazy = false },
   { "lunarvim/darkplus.nvim" },
-  { "folke/todo-comments.nvim" },
+  { "folke/todo-comments.nvim", event = "BufRead" },
 
   -- Color
   { "NvChad/nvim-colorizer.lua" },
@@ -40,33 +54,41 @@ return {
   -- Utility
   { "stevearc/dressing.nvim" },
   { "rcarriga/nvim-notify" },
-  { "ghillb/cybu.nvim" },
+  {
+    "ghillb/cybu.nvim",
+    event = "User FileOpened",
+    lazy = true,
+  },
 
   -- Cmp
-  { "hrsh7th/nvim-cmp" }, -- The completion plugin
-  { "hrsh7th/cmp-buffer" }, -- buffer completions
+  { "hrsh7th/nvim-cmp", lazy = true }, -- The completion plugin
+  { "hrsh7th/cmp-buffer", lazy = true }, -- buffer completions
   { "hrsh7th/cmp-path" }, -- path completions
-  { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-nvim-lua" },
+  { "saadparwaiz1/cmp_luasnip", lazy = true }, -- snippet completions
+  { "hrsh7th/cmp-nvim-lsp", lazy = true },
+  { "hrsh7th/cmp-nvim-lua", lazy = true },
 
   -- Snippets
   {
     "L3MON4D3/LuaSnip",
     event = "InsertEnter",
+    lazy = true,
   }, --snippet engine
   { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
 
   -- LSP
-  { "neovim/nvim-lspconfig" }, -- enable LSP
-  { "williamboman/mason.nvim" }, -- simple to use language server installer
+  { "neovim/nvim-lspconfig", lazy = true }, -- enable LSP
+  { "williamboman/mason.nvim", lazy = true }, -- simple to use language server installer
   { "williamboman/mason-lspconfig.nvim", lazy = true },
-  { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
+  { "jose-elias-alvarez/null-ls.nvim", lazy = true }, -- for formatters and linters
   { "j-hui/fidget.nvim" },
-  { "lvimuser/lsp-inlayhints.nvim" },
-  { "RRethy/vim-illuminate" },
-  { "SmiteshP/nvim-navic" },
-  { "Exafunction/codeium.vim" },
+  { "lvimuser/lsp-inlayhints.nvim", lazy = true },
+  { "RRethy/vim-illuminate", event = "User FileOpened" },
+  { "SmiteshP/nvim-navic", event = "User FileOpened" },
+  {
+    "Exafunction/codeium.vim",
+    event = "InsertEnter",
+  },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
