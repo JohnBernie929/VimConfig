@@ -99,6 +99,9 @@ return {
   -- Git
   { "lewis6991/gitsigns.nvim" },
 
+  -- Editing Support
+  { "monaqa/dial.nvim" },
+
   -- Code Runner
   { "is0n/jaq-nvim" },
   {
