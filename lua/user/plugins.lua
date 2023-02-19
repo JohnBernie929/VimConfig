@@ -37,6 +37,7 @@ return {
   { "folke/which-key.nvim", event = "VeryLazy" },
   { "karb94/neoscroll.nvim" },
   { "folke/zen-mode.nvim" },
+  { "nacro90/numb.nvim" },
 
   -- File Explorer
   { "kyazdani42/nvim-tree.lua", event = "User DirOpened" },
@@ -85,10 +86,7 @@ return {
   { "lvimuser/lsp-inlayhints.nvim", lazy = true },
   { "RRethy/vim-illuminate", event = "User FileOpened" },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
-  {
-    "Exafunction/codeium.vim",
-    event = "InsertEnter",
-  },
+  { "Exafunction/codeium.vim" },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
