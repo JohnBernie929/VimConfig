@@ -74,7 +74,7 @@ cybu.setup {
     show_on_autocmd = false, -- event to trigger cybu (eg. "BufEnter")
   },
 }
-vim.keymap.set("n", "<up>", "<Plug>(CybuPrev)")
-vim.keymap.set("n", "<down>", "<Plug>(CybuNext)")
+-- vim.keymap.set("n", "<up>", "<Plug>(CybuPrev)")
+-- vim.keymap.set("n", "<down>", "<Plug>(CybuNext)")
 vim.keymap.set("n", "<C-h>", "<Plug>(CybuPrev)")
 vim.keymap.set("n", "<C-l>", "<Plug>(CybuNext)")
