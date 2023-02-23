@@ -55,6 +55,7 @@ return {
   -- Utility
   { "stevearc/dressing.nvim" },
   { "rcarriga/nvim-notify" },
+  { "roobert/search-replace.nvim" },
   {
     "ghillb/cybu.nvim",
     event = "User FileOpened",
