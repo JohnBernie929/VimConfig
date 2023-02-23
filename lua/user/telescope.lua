@@ -3,15 +3,14 @@ if not status_ok then
   return
 end
 
-local icons = require("user.icons")
-
 local actions = require "telescope.actions"
-telescope.load_extension "media_files"
+
+local icons = require "user.icons"
 
 telescope.setup {
   defaults = {
 
-    prompt_prefix = icons.ui.Telescope .. " ",
+    prompt_prefix = icons.ui.Telescope,
     selection_caret = " ",
     path_display = { "smart" },
 
@@ -90,35 +89,12 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
-    media_files = {
-      -- filetypes whitelist
-      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-      filetypes = { "png", "webp", "jpg", "jpeg" },
-      find_cmd = "rg", -- find command (defaults to `fd`)
-    },
-    file_browser = {
-      -- theme = "ivy",
-      -- require("telescope.themes").get_dropdown {
-      --   previewer = false,
-      --   -- even more opts
-      -- },
-      mappings = {
-        ["i"] = {
-          -- your custom insert mode mappings
-        },
-        ["n"] = {
-          -- your custom normal mode mappings
-        },
-      },
-    },
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown {
-        previewer = false,
-        -- even more opts
-      },
-    },
+    -- Your extension configuration goes here:
+    -- extension_name = {
+    --   extension_config_key = value,
+    -- }
+    -- please take a look at the readme of the extension you want to configure
   },
 }
 
-require("telescope").load_extension "ui-select"
-require("telescope").load_extension "file_browser"
+telescope.load_extension("notify")

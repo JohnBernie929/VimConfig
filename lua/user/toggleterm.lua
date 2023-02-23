@@ -15,7 +15,7 @@ toggleterm.setup({
 	persist_size = true,
 	direction = "float",
 	close_on_exit = true,
-	shell = 'pwsh',
+	shell = vim.o.shell,
 	float_opts = {
 		border = "curved",
 		winblend = 0,
@@ -67,10 +67,4 @@ local python = Terminal:new({ cmd = "python", hidden = true })
 
 function _PYTHON_TOGGLE()
 	python:toggle()
-end
-
--- Customs
-local live_server = Terminal:new({ cmd = "live-server .", hidden = true })
-function _LIVE_SERVER_TOGGLE()
-  live_server:toggle()
 end
