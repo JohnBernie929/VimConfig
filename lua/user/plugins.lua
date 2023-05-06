@@ -2,7 +2,6 @@ return {
   -- Install your plugins here
   { "folke/lazy.nvim", tag = "stable" },
   { "nvim-lua/plenary.nvim" }, -- Useful lua functions used by lots of plugins
-  { "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
   {
     "numToStr/Comment.nvim",
     keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
@@ -93,9 +92,9 @@ return {
   { "nvim-telescope/telescope.nvim" },
 
   -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-  },
+  { "nvim-treesitter/nvim-treesitter" },
+  { "windwp/nvim-ts-autotag" },
+  { "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
 
   -- Git
   { "lewis6991/gitsigns.nvim" },
@@ -117,5 +116,10 @@ return {
   {
     "phaazon/hop.nvim",
     event = "BufRead",
+  },
+
+  -- Clangd/C++/C
+  {
+    "cdelledonne/vim-cmake",
   },
 }
