@@ -109,7 +109,7 @@ local mode = {
   -- mode component
   function()
     -- return "▊"
-    return " "
+    return "󰀘" -- Orbit
     -- return "  "
   end,
   color = function()
