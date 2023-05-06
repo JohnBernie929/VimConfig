@@ -99,5 +99,7 @@ return {
     Smiley = " ",
     Package = " ",
     CircuitBoard = " ",
+    Orbit = "󰀘",
+    Planet = ""
   },
 }

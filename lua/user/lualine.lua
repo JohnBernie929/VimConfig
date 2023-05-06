@@ -13,6 +13,8 @@ local function contains(t, value)
   return false
 end
 
+local icons = require "user.icons"
+
 local black = "#15161e"
 local gray = "#3b4261"
 local red = "#f7768e"
@@ -108,9 +110,7 @@ local right_pad_alt = {
 local mode = {
   -- mode component
   function()
-    -- return "▊"
-    return "󰀘" -- Orbit
-    -- return "  "
+    return icons.misc.Orbit
   end,
   color = function()
     -- auto change color according to neovims mode
@@ -130,8 +130,6 @@ end
 local hide_in_width_100 = function()
   return vim.o.columns > 100
 end
-
-local icons = require "user.icons"
 
 local diagnostics = {
   "diagnostics",
