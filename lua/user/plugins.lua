@@ -56,6 +56,11 @@ return {
   { "rcarriga/nvim-notify" },
   { "roobert/search-replace.nvim" },
   {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+  },
+
+  {
     "ghillb/cybu.nvim",
     event = "User FileOpened",
     lazy = true,
