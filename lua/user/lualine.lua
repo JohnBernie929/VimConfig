@@ -296,8 +296,7 @@ local spaces = {
       return ""
     end
 
-    -- TODO: update codicons and use their indent
-    return hl_str(" ", "SLSep") .. hl_str(" " .. shiftwidth .. space, "SLIndent") .. hl_str("", "SLSep")
+    return hl_str(" ", "SLSep") .. hl_str(" " .. shiftwidth .. space, "SLIndent") .. hl_str("", "SLSep")
   end,
   padding = 0,
   -- separator = "%#SLSeparator#" .. " │" .. "%*",
