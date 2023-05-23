@@ -91,7 +91,25 @@ return {
   { "lvimuser/lsp-inlayhints.nvim", lazy = true },
   { "RRethy/vim-illuminate", event = "User FileOpened" },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
-  { "Exafunction/codeium.vim" },
+  {
+    "Exafunction/codeium.vim",
+    confg = function()
+      local opts = { expr = true, silent = true }
+
+      vim.keymap.set("i", "<M-a>", function()
+        return vim.fn["codeium#Accept"]()
+      end, opts)
+      vim.keymap.set("i", "<M-.>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, opts)
+      vim.keymap.set("i", "<M-,>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, opts)
+      vim.keymap.set("i", "<M-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, opts)
+    end,
+  },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
