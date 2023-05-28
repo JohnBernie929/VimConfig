@@ -9,6 +9,7 @@ local servers = {
   -- "yamlls",
   "clangd",
   "powershell_es",
+  "intelephense",
 }
 
 local settings = {
