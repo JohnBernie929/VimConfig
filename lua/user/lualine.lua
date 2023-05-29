@@ -3,6 +3,15 @@ if not status_ok then
   return
 end
 
+local cb_status_ok, cb = pcall(require, "colorbuddy.init")
+if not cb_status_ok then
+  return
+end
+
+local colors = cb.colors
+local Group = cb.Group
+local styles = cb.styles
+
 -- check if value in table
 local function contains(t, value)
   for _, v in pairs(t) do
@@ -27,6 +36,7 @@ local white = "#a9b1d6"
 local bg = "#1a1b26"
 local fg = "#c0caf5"
 
+vim.api.nvim_set_hl(0, "StatusLine", { fg = fg, bg = bg })
 vim.api.nvim_set_hl(0, "SLGitIcon", { fg = yellow, bg = gray })
 vim.api.nvim_set_hl(0, "SLBranchName", { fg = fg, bg = gray, bold = false })
 vim.api.nvim_set_hl(0, "SLProgress", { fg = purple, bg = gray })
@@ -34,11 +44,33 @@ vim.api.nvim_set_hl(0, "SLLocation", { fg = blue, bg = gray })
 vim.api.nvim_set_hl(0, "SLIndent", { fg = white, bg = gray })
 vim.api.nvim_set_hl(0, "SLTermIcon", { fg = purple, bg = gray })
 vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = gray })
-vim.api.nvim_set_hl(0, "SLLSP", { fg = "#6b727f", bg = "NONE" })
-vim.api.nvim_set_hl(0, "SLSep", { fg = gray, bg = "NONE" })
+vim.api.nvim_set_hl(0, "SLLSP", { fg = gray, bg = bg })
+vim.api.nvim_set_hl(0, "SLSep", { fg = gray, bg = bg })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = fg, bg = "NONE", italic = true })
 vim.api.nvim_set_hl(0, "SLError", { fg = red, bg = "NONE" })
 vim.api.nvim_set_hl(0, "SLWarning", { fg = yellow, bg = "NONE" })
+
+if vim.g.colors_name == "neosolarized" then
+  gray = "#002b36"
+  bg = "NONE"
+
+  Group.new("StatusLine", colors.none, colors.none, styles.NONE)
+  Group.new("StatusLineNC", colors.base3, colors.NONE, styles.NONE)
+  Group.new("SLWarning", colors.yellow, colors.none, styles.NONE)
+  Group.new("SLError", colors.red, colors.none, styles.NONE)
+  Group.new("SLGitIcon", colors.yellow, colors.base03, styles.NONE)
+  Group.new("SLBranchName", colors.base3, colors.base03, styles.NONE)
+  Group.new("SLProgress", colors.magenta, colors.base03, styles.NONE)
+
+  vim.api.nvim_set_hl(0, "", { fg = purple, bg = gray })
+  vim.api.nvim_set_hl(0, "SLLocation", { fg = blue, bg = gray })
+  vim.api.nvim_set_hl(0, "SLIndent", { fg = white, bg = gray })
+  vim.api.nvim_set_hl(0, "SLTermIcon", { fg = purple, bg = gray })
+  vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = gray })
+  vim.api.nvim_set_hl(0, "SLLSP", { fg = gray, bg = bg })
+  vim.api.nvim_set_hl(0, "SLSep", { fg = gray, bg = "NONE" })
+  vim.api.nvim_set_hl(0, "SLSeparator", { fg = fg, bg = "NONE", italic = true })
+end
 
 local hl_str = function(str, hl)
   return "%#" .. hl .. "#" .. str .. "%*"
@@ -93,7 +125,7 @@ local left_pad_alt = {
   end,
   padding = 0,
   color = function()
-    return { fg = gray }
+    return { fg = gray, bg = bg }
   end,
 }
 
@@ -103,7 +135,7 @@ local right_pad_alt = {
   end,
   padding = 0,
   color = function()
-    return { fg = gray }
+    return { fg = gray, bg = bg }
   end,
 }
 
@@ -139,10 +171,12 @@ local diagnostics = {
     error = "%#SLError#" .. icons.diagnostics.Error .. "%*",
     warn = "%#SLWarning#" .. icons.diagnostics.Warning .. "%*",
   },
-  colored = false,
   update_in_insert = false,
   always_visible = true,
   padding = 0,
+  color = function()
+    return { fg = red, bg = bg }
+  end,
 }
 
 local diff = {
@@ -404,9 +438,9 @@ lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
-    -- theme = "auto",
-    theme = {
-      normal = {
+    -- theme = "solarized_dark",
+    normal = {
+      theme = {
         a = { fg = fg, bg = bg },
         b = { fg = fg, bg = bg },
         c = { fg = fg, bg = bg },
@@ -420,7 +454,6 @@ lualine.setup {
   sections = {
     lualine_a = { left_pad, mode, branch, right_pad },
     lualine_b = { left_pad_alt, diagnostics, right_pad_alt },
-    -- lualine_c = {},
     lualine_c = { current_signature },
     -- lualine_x = { diff, spaces, "encoding", filetype },
     -- lualine_x = { diff, lanuage_server, spaces, filetype },
@@ -440,3 +473,5 @@ lualine.setup {
   tabline = {},
   extensions = {},
 }
+
+Group.new("lualine_c_normal", colors.none, colors.none, styles.NONE)

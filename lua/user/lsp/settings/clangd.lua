@@ -4,17 +4,9 @@ if not lspconfig_status_ok then
 end
 
 return {
-  cmd = { "clangd" },
+  cmd = { "C:\\MinGW\\bin\\clangd.exe" },
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_dir = function()
     return vim.loop.cwd()
   end,
-  settings = {
-    clangd = {
-      includePaths = {
-        "C:/MinGW/include",
-        "C:/MinGW/include/c++/12.3.0",
-      },
-    },
-  },
 }
