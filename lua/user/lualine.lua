@@ -62,7 +62,6 @@ if vim.g.colors_name == "neosolarized" then
   Group.new("SLBranchName", colors.base3, colors.base03, styles.NONE)
   Group.new("SLProgress", colors.magenta, colors.base03, styles.NONE)
 
-  vim.api.nvim_set_hl(0, "", { fg = purple, bg = gray })
   vim.api.nvim_set_hl(0, "SLLocation", { fg = blue, bg = gray })
   vim.api.nvim_set_hl(0, "SLIndent", { fg = white, bg = gray })
   vim.api.nvim_set_hl(0, "SLTermIcon", { fg = purple, bg = gray })
