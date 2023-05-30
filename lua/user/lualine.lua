@@ -475,3 +475,7 @@ lualine.setup {
 }
 
 Group.new("lualine_c_normal", colors.none, colors.none, styles.NONE)
+Group.new("lualine_c_command", colors.none, colors.none, styles.NONE)
+Group.new("lualine_c_visual", colors.none, colors.none, styles.NONE)
+Group.new("lualine_c_replace", colors.none, colors.none, styles.NONE)
+Group.new("lualine_c_insert", colors.none, colors.none, styles.NONE)
