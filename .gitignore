@@ -1,3 +1,5 @@
 autoload/
 undo/
 plugin/
+session/
+lazy-lock.json

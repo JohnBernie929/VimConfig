@@ -13,17 +13,18 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +0 ~/.config/nvim/README.md
+badd +5 .gitignore
 argglobal
 %argdel
-edit ~/.config/nvim/README.md
+$argadd .gitignore
+edit .gitignore
 argglobal
-let s:l = 21 - ((20 * winheight(0) + 14) / 28)
+let s:l = 5 - ((4 * winheight(0) + 14) / 28)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 21
-normal! 044|
+keepjumps 5
+normal! 014|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
