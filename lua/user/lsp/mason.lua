@@ -7,7 +7,6 @@ local servers = {
   -- "bashls",
   "jsonls",
   -- "yamlls",
-  "clangd",
   "powershell_es",
   "intelephense",
 }
