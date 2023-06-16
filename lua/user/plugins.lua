@@ -88,7 +88,11 @@ lazy.setup({
   { "nvim-colortils/colortils.nvim" },
 
   -- Utility
-  { "stevearc/dressing.nvim" },
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    lazy = true,
+  },
   { "rcarriga/nvim-notify" },
   { "roobert/search-replace.nvim" },
   {
