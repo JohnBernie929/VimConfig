@@ -38,3 +38,4 @@ Group.new("HoverBorder", colors.yellow, colors.none, styles.NONE)
 Group.new("EyelinerPrimary", colors.yellow)
 Group.new("EyelinerSecondary", colors.red)
 
+Group.new("TelescopeSelection", colors.none)
