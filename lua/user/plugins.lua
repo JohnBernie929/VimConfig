@@ -65,6 +65,10 @@ lazy.setup({
   { "karb94/neoscroll.nvim" },
   { "folke/zen-mode.nvim" },
   { "nacro90/numb.nvim" },
+  {
+    "sindrets/diffview.nvim",
+    event = "BufRead",
+  },
 
   -- File Explorer
   { "kyazdani42/nvim-tree.lua", event = "User DirOpened" },
@@ -97,9 +101,16 @@ lazy.setup({
     event = "User FileOpened",
     lazy = true,
   },
+  {
+    "rest-nvim/rest.nvim",
+  },
 
   -- Cmp
-  { "hrsh7th/nvim-cmp", lazy = true }, -- The completion plugin
+  {
+    "hrsh7th/nvim-cmp",
+    lazy = true,
+    event = "InsertEnter",
+  }, -- The completion plugin
   { "hrsh7th/cmp-buffer", lazy = true }, -- buffer completions
   { "hrsh7th/cmp-path" }, -- path completions
   { "saadparwaiz1/cmp_luasnip", lazy = true }, -- snippet completions
@@ -112,7 +123,11 @@ lazy.setup({
     event = "InsertEnter",
     lazy = true,
   }, --snippet engine
-  { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
+  {
+    "rafamadriz/friendly-snippets",
+    event = "InsertEnter",
+    lazy = true,
+  }, -- a bunch of snippets to use
 
   -- LSP
   { "neovim/nvim-lspconfig", lazy = true }, -- enable LSP
@@ -123,7 +138,7 @@ lazy.setup({
   { "lvimuser/lsp-inlayhints.nvim", lazy = true },
   { "RRethy/vim-illuminate", event = "User FileOpened" },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
-  -- { "Exafunction/codeium.vim" },
+  { "Exafunction/codeium.vim" },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },

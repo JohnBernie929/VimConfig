@@ -196,7 +196,7 @@ local mappings = {
     h = { "<cmd>Telescope notify<cr>", "History" },
   },
 
-  r = {
+  R = {
     name = "Replace",
     s = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
     o = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
