@@ -191,9 +191,10 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
-  N = {
-    name = "Notify",
-    h = { "<cmd>Telescope notify<cr>", "History" },
+  n = {
+    name = "Notes",
+    n = { "<cmd>Neorg workspace notes<CR>", "Notes index" },
+    N = { "<cmd>e ~/notes<CR>", "Notes" },
   },
 
   R = {
