@@ -91,6 +91,7 @@ lazy.setup({
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
   },
+  {"rest-nvim/rest.nvim"},
 
   {
     "ghillb/cybu.nvim",

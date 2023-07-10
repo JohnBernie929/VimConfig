@@ -10,6 +10,7 @@ local servers = {
   "clangd",
   "powershell_es",
   "intelephense",
+  -- "emmet_ls",
 }
 
 local settings = {
