@@ -40,3 +40,4 @@ Group.new("EyelinerSecondary", colors.red)
 
 Group.new("TelescopeSelectionCaret", colors.cyan, colors.base03, styles.BOLD)
 Group.new("TelescopeSelection", colors.cyan, colors.base03, styles.BOLD)
+Group.new("TodoBgFIX", colors.base03, colors.red)

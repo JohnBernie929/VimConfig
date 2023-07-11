@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "help",
     "man",
     "lspinfo",
+    "floaterm",
     "spectre_panel",
     "lir",
     "DressingSelect",
@@ -21,11 +22,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     "Markdown",
   },
   callback = function()
-    vim.cmd [[
-      nnoremap <silent> <buffer> q :close<CR> 
-      nnoremap <silent> <buffer> <esc> :close<CR> 
-      set nobuflisted 
-    ]]
+    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = true })
+    vim.opt_local.buflisted = false
   end,
 })
 

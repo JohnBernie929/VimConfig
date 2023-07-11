@@ -4,11 +4,13 @@ local servers = {
   "html",
   "tsserver",
   "pyright",
-  -- "bashls",
   "jsonls",
-  -- "yamlls",
   "powershell_es",
   "intelephense",
+  "zls",
+  "clangd",
+  "emmet_ls",
+  "glint",
 }
 
 local settings = {

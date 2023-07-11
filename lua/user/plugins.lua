@@ -99,10 +99,7 @@ lazy.setup({
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
   },
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-  },
+  { "nvim-neorg/neorg" },
 
   {
     "ghillb/cybu.nvim",
@@ -150,6 +147,7 @@ lazy.setup({
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 
   -- Treesitter
   { "nvim-treesitter/nvim-treesitter" },
@@ -182,6 +180,9 @@ lazy.setup({
   {
     "cdelledonne/vim-cmake",
   },
+
+  -- Handlebars
+  -- { "mustache/vim-mustache-handlebars" },
 }, {
   ui = {
     border = "rounded",

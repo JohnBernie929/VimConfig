@@ -51,6 +51,15 @@ M.setup = function()
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "rounded",
   })
+
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    virtual_text = {
+      spacing = 5,
+      severity_limit = "Warning",
+    },
+    update_in_insert = true,
+  })
 end
 
 local function attach_navic(client, bufnr)
@@ -84,7 +93,10 @@ end
 
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-  attach_navic(client, bufnr)
+
+  if client.server_capabilities.documentSymbolProvider then
+    attach_navic(client, bufnr)
+  end
 
   if client.name == "tsserver" then
     client.server_capabilities.documentFormattingProvider = false

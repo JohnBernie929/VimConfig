@@ -193,8 +193,8 @@ local mappings = {
   },
   n = {
     name = "Notes",
-    n = { "<cmd>Neorg workspace notes<CR>", "Notes index" },
-    N = { "<cmd>e ~/notes<CR>", "Notes" },
+    n = { "<cmd>e ~/notes<CR>", "Notes" },
+    N = { "<cmd>Neorg workspace notes<CR>", "Notes Neorg" },
   },
 
   R = {
