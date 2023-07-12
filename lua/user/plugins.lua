@@ -80,6 +80,7 @@ lazy.setup({
   { "folke/todo-comments.nvim", event = "BufRead" },
   {
     "svrana/NeoSolarized.nvim",
+    lazy = false,
     dependencies = { "tjdevries/colorbuddy.nvim" },
   },
 
@@ -100,6 +101,10 @@ lazy.setup({
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
   },
   { "nvim-neorg/neorg" },
+  {
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+  },
 
   {
     "ghillb/cybu.nvim",
@@ -165,6 +170,7 @@ lazy.setup({
 
   {
     "folke/noice.nvim",
+    event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
     },
