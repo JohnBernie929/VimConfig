@@ -3,14 +3,15 @@ local servers = {
   "cssls",
   "html",
   "tsserver",
-  "pyright",
+  "tailwindcss",
+  "emmet_ls",
+  "stylelint_lsp",
+  "glint",
   "jsonls",
+  "pyright",
   "powershell_es",
   "intelephense",
-  "zls",
   "clangd",
-  "emmet_ls",
-  "glint",
 }
 
 local settings = {

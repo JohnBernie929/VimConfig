@@ -114,6 +114,7 @@ lazy.setup({
   {
     "rest-nvim/rest.nvim",
   },
+  { "filipdutescu/renamer.nvim" },
 
   -- Cmp
   {
@@ -126,6 +127,7 @@ lazy.setup({
   { "saadparwaiz1/cmp_luasnip", lazy = true }, -- snippet completions
   { "hrsh7th/cmp-nvim-lsp", lazy = true },
   { "hrsh7th/cmp-nvim-lua", lazy = true },
+  { "roobert/tailwindcss-colorizer-cmp.nvim" },
 
   -- Snippets
   {

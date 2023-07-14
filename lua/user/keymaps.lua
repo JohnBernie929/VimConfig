@@ -41,7 +41,7 @@ keymap("n", "<C-q>", ":bwipeout<CR>", opts)
 -- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
@@ -73,6 +73,9 @@ keymap("t", "<M-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("v", "<C-r>", "<CMD>SearchReplaceSingleBufferVisualSelection<CR>", opts)
 keymap("v", "<C-s>", "<CMD>SearchReplaceWithinVisualSelection<CR>", opts)
 keymap("v", "<C-b>", "<CMD>SearchReplaceWithinVisualSelectionCWord<CR>", opts)
+
+-- Renamer
+keymap("n", "<F2>", '<cmd>lua require("renamer").rename()<cr>', opts)
 
 -- Custom
 keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)

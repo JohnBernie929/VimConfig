@@ -83,6 +83,7 @@ cmp.setup {
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
+    -- format = require("tailwindcss-colorizer-cmp").formatter,
     format = function(entry, vim_item)
       -- Kind icons
       vim_item.kind = kind_icons[vim_item.kind]
