@@ -247,7 +247,7 @@ local branch = {
   -- cond = hide_in_width_100,
   fmt = function(str)
     if str == "" or str == nil then
-      return "!=vcs"
+      return "!= vcs"
     end
 
     return str

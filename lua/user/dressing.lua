@@ -39,6 +39,8 @@ dressing.setup {
 
     -- see :help dressing_get_config
     get_config = nil,
+
+    winhighlight = "NormalFloat:DiagnosticError",
   },
   select = {
     -- Set to false to disable the vim.ui.select implementation
@@ -70,6 +72,8 @@ dressing.setup {
       },
       win_options = {
         winblend = 10,
+        list = true,
+        listchars = "precedes:…,extends:…",
       },
       max_width = 80,
       max_height = 40,
@@ -103,7 +107,13 @@ dressing.setup {
     },
 
     -- Used to override format_item. See :help dressing-format
-    format_item_override = {},
+    format_item_override = {
+      codeaction = function(action_tuple)
+        local title = action_tuple[2].title:gsub("\r\n", "\\r\\n")
+        local client = vim.lsp.get_client_by_id(action_tuple[1])
+        return string.format("%s\t[%s]", title:gsub("\n", "\\n"), client.name)
+      end,
+    },
 
     -- see :help dressing_get_config
     get_config = nil,

@@ -40,7 +40,7 @@ lazy.setup({
   {
     "akinsho/bufferline.nvim",
     event = "User FileOpened",
-    enabled = false,
+    enabled = true,
   },
   { "moll/vim-bbye" },
   {
@@ -75,9 +75,21 @@ lazy.setup({
   { "tamago324/lir.nvim", event = "User DirOpened" },
 
   -- Colorschemes
-  { "folke/tokyonight.nvim", lazy = false },
-  { "lunarvim/darkplus.nvim" },
-  { "folke/todo-comments.nvim", event = "BufRead" },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "lunarvim/darkplus.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    priority = 1000,
+  },
   {
     "svrana/NeoSolarized.nvim",
     lazy = false,
@@ -110,11 +122,11 @@ lazy.setup({
     "ghillb/cybu.nvim",
     event = "User FileOpened",
     lazy = true,
+    enabled = false,
   },
   {
     "rest-nvim/rest.nvim",
   },
-  { "filipdutescu/renamer.nvim" },
 
   -- Cmp
   {
