@@ -44,4 +44,3 @@ Group.new("TodoBgFIX", colors.base03, colors.red)
 Group.new("NoiceLspProgressTitle", colors.none, colors.base03)
 Group.new("NoiceLspProgressSpinner", colors.none, colors.base03)
 Group.new("NoiceLspProgressClient", colors.none, colors.base03)
-

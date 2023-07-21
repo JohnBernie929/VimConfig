@@ -95,6 +95,7 @@ lazy.setup({
     lazy = false,
     dependencies = { "tjdevries/colorbuddy.nvim" },
   },
+  { "navarasu/onedark.nvim" },
 
   -- Color
   { "NvChad/nvim-colorizer.lua" },
@@ -163,6 +164,7 @@ lazy.setup({
   { "RRethy/vim-illuminate", event = "User FileOpened" },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
   { "Exafunction/codeium.vim" },
+  { "ray-x/lsp_signature.nvim" },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },

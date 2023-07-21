@@ -85,21 +85,27 @@ bufferline.setup {
     },
   },
 
-  highlights = {
-    fill = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = "#073642",
-    },
-    background = {
-      bg = "#002b36",
-    },
-    separator = {
-      fg = "#073642",
-      bg = "#002b36",
-    },
+  highlights = function()
+    if vim.g.colors_name == "neosolarized" then
+      return {
+        fill = {
+          fg = { attribute = "fg", highlight = "TabLine" },
+          bg = "#073642",
+        },
+        background = {
+          bg = "#002b36",
+        },
+        separator = {
+          fg = "#073642",
+          bg = "#002b36",
+        },
 
-    separator_selected = {
-      fg = "#073642",
-    },
-  },
+        separator_selected = {
+          fg = "#073642",
+        },
+      }
+    else
+      return {}
+    end
+  end,
 }
