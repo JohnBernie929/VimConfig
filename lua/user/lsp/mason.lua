@@ -12,6 +12,7 @@ local servers = {
   "powershell_es",
   "intelephense",
   "clangd",
+  "rust_analyzer",
 }
 
 local settings = {

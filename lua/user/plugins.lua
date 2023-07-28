@@ -205,6 +205,15 @@ lazy.setup({
 
   -- Handlebars
   -- { "mustache/vim-mustache-handlebars" },
+
+  -- Rust
+  {
+    "simrat39/rust-tools.nvim",
+    config = function()
+      require "user.rust-tools"
+    end,
+    ft = { "rust", "rs" },
+  },
 }, {
   ui = {
     border = "rounded",
