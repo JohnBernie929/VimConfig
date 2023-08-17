@@ -4,11 +4,10 @@ local servers = {
   "html",
   "tsserver",
   "pyright",
-  -- "bashls",
+  "bashls",
   "jsonls",
   -- "yamlls",
   "clangd",
-  "powershell_es",
   "intelephense",
   -- "emmet_ls",
 }

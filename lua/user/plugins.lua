@@ -1,14 +1,14 @@
 -- Automatically install Lazy.nvim
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  }
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -23,145 +23,158 @@ vim.opt.rtp:prepend(lazypath)
 -- Use a protected call so we don't error out on first use
 local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
-  return
+	return
 end
 
 lazy.setup({
-  -- Install your plugins here
-  { "folke/lazy.nvim", tag = "stable" },
-  { "nvim-lua/plenary.nvim" }, -- Useful lua functions used by lots of plugins
-  {
-    "numToStr/Comment.nvim",
-    keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
-    event = "User FileOpened",
-  },
-  { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-  { "kyazdani42/nvim-web-devicons", lazy = true },
-  {
-    "akinsho/bufferline.nvim",
-    event = "User FileOpened",
-    enabled = false,
-  },
-  { "moll/vim-bbye" },
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VimEnter",
-  },
-  {
-    "akinsho/toggleterm.nvim",
-    event = "VeryLazy",
-  },
-  {
-    "ahmedkhalf/project.nvim",
-    event = "VimEnter",
-  },
-  { "lewis6991/impatient.nvim" },
-  { "lukas-reineke/indent-blankline.nvim" },
-  {
-    "goolord/alpha-nvim",
-    event = "VimEnter",
-  },
-  { "folke/which-key.nvim", event = "VeryLazy" },
-  { "karb94/neoscroll.nvim" },
-  { "folke/zen-mode.nvim" },
-  { "nacro90/numb.nvim" },
+	-- Install your plugins here
+	{ "folke/lazy.nvim", tag = "stable" },
+	{ "nvim-lua/plenary.nvim" }, -- Useful lua functions used by lots of plugins
+	{
+		"numToStr/Comment.nvim",
+		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
+		event = "User FileOpened",
+	},
+	{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+	{ "kyazdani42/nvim-web-devicons", lazy = true },
+	{
+		"akinsho/bufferline.nvim",
+		event = "User FileOpened",
+		enabled = false,
+	},
+	{ "moll/vim-bbye" },
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "VimEnter",
+	},
+	{
+		"akinsho/toggleterm.nvim",
+		event = "VeryLazy",
+	},
+	{
+		"ahmedkhalf/project.nvim",
+		event = "VimEnter",
+	},
+	{ "lewis6991/impatient.nvim" },
+	{ "lukas-reineke/indent-blankline.nvim" },
+	{
+		"goolord/alpha-nvim",
+		event = "VimEnter",
+	},
+	{ "folke/which-key.nvim", event = "VeryLazy" },
+	{ "karb94/neoscroll.nvim" },
+	{ "folke/zen-mode.nvim" },
+	{ "nacro90/numb.nvim" },
 
-  -- File Explorer
-  { "kyazdani42/nvim-tree.lua", event = "User DirOpened" },
-  { "tamago324/lir.nvim", event = "User DirOpened" },
+	-- File Explorer
+	{
+		"nvim-tree/nvim-tree.lua",
+		cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
+		event = "User DirOpened",
+    config = function ()
+      local _, nvimtree = pcall(require, "nvim-tree")
+      if not _ then
+        return
+      end
 
-  -- Colorschemes
-  { "folke/tokyonight.nvim", lazy = false },
-  { "lunarvim/darkplus.nvim" },
-  { "folke/todo-comments.nvim", event = "BufRead" },
-  {
-    "svrana/NeoSolarized.nvim",
-    dependencies = { "tjdevries/colorbuddy.nvim" },
-  },
+      local setup = require("user.nvim-tree")
+      nvimtree.setup(setup)
+    end
+	},
+	{ "tamago324/lir.nvim", event = "User DirOpened" },
 
-  -- Color
-  { "NvChad/nvim-colorizer.lua" },
-  { "nvim-colortils/colortils.nvim" },
+	-- Colorschemes
+	{ "folke/tokyonight.nvim", lazy = false },
+	{ "lunarvim/darkplus.nvim" },
+	{ "folke/todo-comments.nvim", event = "BufRead" },
+	{
+		"svrana/NeoSolarized.nvim",
+		dependencies = { "tjdevries/colorbuddy.nvim" },
+	},
 
-  -- Utility
-  { "stevearc/dressing.nvim" },
-  { "rcarriga/nvim-notify" },
-  { "roobert/search-replace.nvim" },
-  {
-    "folke/persistence.nvim",
-    event = "BufReadPre", -- this will only start session saving when an actual file was opened
-  },
-  {"rest-nvim/rest.nvim"},
+	-- Color
+	{ "NvChad/nvim-colorizer.lua" },
+	{ "nvim-colortils/colortils.nvim" },
 
-  {
-    "ghillb/cybu.nvim",
-    event = "User FileOpened",
-    lazy = true,
-  },
+	-- Utility
+	{ "stevearc/dressing.nvim" },
+	{ "rcarriga/nvim-notify" },
+	{ "roobert/search-replace.nvim" },
+	{
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+	},
+	{ "rest-nvim/rest.nvim" },
 
-  -- Cmp
-  { "hrsh7th/nvim-cmp", lazy = true }, -- The completion plugin
-  { "hrsh7th/cmp-buffer", lazy = true }, -- buffer completions
-  { "hrsh7th/cmp-path" }, -- path completions
-  { "saadparwaiz1/cmp_luasnip", lazy = true }, -- snippet completions
-  { "hrsh7th/cmp-nvim-lsp", lazy = true },
-  { "hrsh7th/cmp-nvim-lua", lazy = true },
+	{
+		"ghillb/cybu.nvim",
+		event = "User FileOpened",
+		lazy = true,
+	},
 
-  -- Snippets
-  {
-    "L3MON4D3/LuaSnip",
-    event = "InsertEnter",
-    lazy = true,
-  }, --snippet engine
-  { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
+	-- Cmp
+	{ "hrsh7th/nvim-cmp", lazy = true }, -- The completion plugin
+	{ "hrsh7th/cmp-buffer", lazy = true }, -- buffer completions
+	{ "hrsh7th/cmp-path" }, -- path completions
+	{ "saadparwaiz1/cmp_luasnip", lazy = true }, -- snippet completions
+	{ "hrsh7th/cmp-nvim-lsp", lazy = true },
+	{ "hrsh7th/cmp-nvim-lua", lazy = true },
 
-  -- LSP
-  { "neovim/nvim-lspconfig", lazy = true }, -- enable LSP
-  { "williamboman/mason.nvim", lazy = true }, -- simple to use language server installer
-  { "williamboman/mason-lspconfig.nvim", lazy = true },
-  { "jose-elias-alvarez/null-ls.nvim", lazy = true }, -- for formatters and linters
-  { "j-hui/fidget.nvim" },
-  { "lvimuser/lsp-inlayhints.nvim", lazy = true },
-  { "RRethy/vim-illuminate", event = "User FileOpened" },
-  { "SmiteshP/nvim-navic", event = "User FileOpened" },
-  -- { "Exafunction/codeium.vim" },
+	-- Snippets
+	{
+		"L3MON4D3/LuaSnip",
+		event = "InsertEnter",
+		lazy = true,
+	}, --snippet engine
+	{ "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
 
-  -- Telescope
-  { "nvim-telescope/telescope.nvim" },
+	-- LSP
+	{ "neovim/nvim-lspconfig", lazy = true }, -- enable LSP
+	{ "williamboman/mason.nvim", lazy = true }, -- simple to use language server installer
+	{ "williamboman/mason-lspconfig.nvim", lazy = true },
+	{ "jose-elias-alvarez/null-ls.nvim", lazy = true }, -- for formatters and linters
+	{ "j-hui/fidget.nvim" },
+	{ "lvimuser/lsp-inlayhints.nvim", lazy = true },
+	{ "RRethy/vim-illuminate", event = "User FileOpened" },
+	{ "SmiteshP/nvim-navic", event = "User FileOpened" },
+	-- { "Exafunction/codeium.vim" },
 
-  -- Treesitter
-  { "nvim-treesitter/nvim-treesitter" },
-  { "windwp/nvim-ts-autotag" },
-  { "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
+	-- Telescope
+	{ "nvim-telescope/telescope.nvim" },
 
-  -- Git
-  { "lewis6991/gitsigns.nvim" },
+	-- Treesitter
+	{ "nvim-treesitter/nvim-treesitter" },
+	{ "windwp/nvim-ts-autotag" },
+	{ "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
 
-  -- Editing Support
-  { "monaqa/dial.nvim" },
+	-- Git
+	{ "lewis6991/gitsigns.nvim" },
 
-  -- Code Runner
-  { "is0n/jaq-nvim" },
+	-- Editing Support
+	{ "monaqa/dial.nvim" },
 
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-  },
+	-- Code Runner
+	{ "is0n/jaq-nvim" },
 
-  -- Motion
-  {
-    "phaazon/hop.nvim",
-    event = "BufRead",
-  },
+	{
+		"folke/noice.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+	},
 
-  -- Clangd/C++/C
-  {
-    "cdelledonne/vim-cmake",
-  },
+	-- Motion
+	{
+		"phaazon/hop.nvim",
+		event = "BufRead",
+	},
+
+	-- Clangd/C++/C
+	{
+		"cdelledonne/vim-cmake",
+	},
 }, {
-  ui = {
-    border = "rounded",
-  },
+	ui = {
+		border = "rounded",
+	},
 })
