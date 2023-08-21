@@ -71,15 +71,15 @@ lazy.setup({
 		"nvim-tree/nvim-tree.lua",
 		cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
 		event = "User DirOpened",
-    config = function ()
-      local _, nvimtree = pcall(require, "nvim-tree")
-      if not _ then
-        return
-      end
+		config = function()
+			local _, nvimtree = pcall(require, "nvim-tree")
+			if not _ then
+				return
+			end
 
-      local setup = require("user.nvim-tree")
-      nvimtree.setup(setup)
-    end
+			local setup = require("user.nvim-tree")
+			nvimtree.setup(setup)
+		end,
 	},
 	{ "tamago324/lir.nvim", event = "User DirOpened" },
 

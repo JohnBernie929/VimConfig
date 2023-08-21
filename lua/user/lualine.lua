@@ -247,7 +247,7 @@ local branch = {
   -- cond = hide_in_width_100,
   fmt = function(str)
     if str == "" or str == nil then
-      return "!=vcs"
+      return "!= vcs"
     end
 
     return str
@@ -478,3 +478,4 @@ Group.new("lualine_c_command", colors.none, colors.none, styles.NONE)
 Group.new("lualine_c_visual", colors.none, colors.none, styles.NONE)
 Group.new("lualine_c_replace", colors.none, colors.none, styles.NONE)
 Group.new("lualine_c_insert", colors.none, colors.none, styles.NONE)
+Group.new("lualine_c_terminal", colors.none, colors.none, styles.NONE)
