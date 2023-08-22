@@ -16,7 +16,7 @@ toggleterm.setup {
   persist_mode = false, -- if set to true (default) the previous terminal mode will be remembered
   direction = "float",
   close_on_exit = true,
-  shell = "pwsh",
+  shell = vim.o.shell,
   float_opts = {
     border = "curved",
     winblend = 0,
