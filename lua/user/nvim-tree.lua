@@ -32,10 +32,10 @@ return {
 	--   "dashboard",
 	--   "alpha",
 	-- },
-	filters = {
-		custom = { ".git" },
-		exclude = { ".gitignore" },
-	},
+	-- filters = {
+	-- 	custom = { ".git" },
+	-- 	exclude = { ".gitignore" },
+	-- },
 	-- auto_close = true,
 	-- open_on_tab = false,
 	hijack_cursor = false,
@@ -80,8 +80,8 @@ return {
 				folder = {
 					arrow_open = icons.ui.ArrowOpen,
 					arrow_closed = icons.ui.ArrowClosed,
-					default = "",
-					open = "",
+					default = "󰉋",
+					open = "󰝰",
 					empty = "",
 					empty_open = "",
 					symlink = "",
