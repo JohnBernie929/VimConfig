@@ -91,6 +91,7 @@ lazy.setup({
 		"svrana/NeoSolarized.nvim",
 		dependencies = { "tjdevries/colorbuddy.nvim" },
 	},
+	{ "neanias/everforest-nvim", lazy = false },
 
 	-- Color
 	{ "NvChad/nvim-colorizer.lua" },
