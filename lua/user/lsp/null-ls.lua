@@ -11,7 +11,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
   debug = false,
   sources = {
-    formatting.prettier.with {
+    formatting.prettierd.with {
       extra_args = function()
         if vim.fs.dirname(vim.fs.find({ ".prettierrc", ".prettierrc.js" }, { upward = true })[1]) then
           return nil

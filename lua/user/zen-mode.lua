@@ -11,7 +11,7 @@ zen_mode.setup {
     width = 80,
     options = {
       signcolumn = "no",
-      number = false,
+      number = true,
       relativenumber = false,
       cursorline = true,
       cursorcolumn = false, -- disable cursor column
@@ -28,8 +28,8 @@ zen_mode.setup {
     require("lsp-inlayhints").toggle()
     vim.g.cmp_active = false
     vim.cmd [[LspStop]]
-    local status_ok, _ = pcall(vim.api.nvim_set_option_value, "winbar", nil, { scope = "local" })
-    if not status_ok then
+    local status_ok_winbar, _ = pcall(vim.api.nvim_set_option_value, "winbar", nil, { scope = "local" })
+    if not status_ok_winbar then
       return
     end
     if vim.fn.exists("#" .. "_winbar") == 1 then

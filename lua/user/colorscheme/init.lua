@@ -1,4 +1,4 @@
-local colorscheme = "onedark"
+local colorscheme = "everforest"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -6,9 +6,11 @@ if not status_ok then
 end
 
 if colorscheme == "neosolarized" then
-  require("user.colorscheme.neosolarized")
+  require "user.colorscheme.neosolarized"
 elseif colorscheme == "onedark" then
-  require("user.colorscheme.onedark")
+  require "user.colorscheme.onedark"
+else
+  require("user.colorscheme." .. colorscheme)
 end
 
 vim.api.nvim_set_hl(0, "Folded", { link = "CursorLine" })

@@ -71,7 +71,15 @@ lazy.setup({
   },
 
   -- File Explorer
-  { "kyazdani42/nvim-tree.lua", event = "User DirOpened" },
+  {
+    "nvim-tree/nvim-tree.lua",
+    event = "User DirOpened",
+    cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFileToggle" },
+    config = function()
+      local nvim_tree_config = require "user.nvim-tree"
+      require("nvim-tree").setup(nvim_tree_config)
+    end,
+  },
   { "tamago324/lir.nvim", event = "User DirOpened" },
 
   -- Colorschemes
@@ -96,6 +104,12 @@ lazy.setup({
     dependencies = { "tjdevries/colorbuddy.nvim" },
   },
   { "navarasu/onedark.nvim" },
+  {
+    "neanias/everforest-nvim",
+    version = false,
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+  },
 
   -- Color
   { "NvChad/nvim-colorizer.lua" },

@@ -69,9 +69,7 @@ if vim.g.colors_name == "neosolarized" then
   vim.api.nvim_set_hl(0, "SLLSP", { fg = gray, bg = bg })
   vim.api.nvim_set_hl(0, "SLSep", { fg = gray, bg = "NONE" })
   vim.api.nvim_set_hl(0, "SLSeparator", { fg = fg, bg = "NONE", italic = true })
-end
-
-if vim.g.colors_name == "onedark" then
+elseif vim.g.colors_name == "onedark" then
   bg = "#1f2329"
   gray = "#282c34"
 
@@ -88,6 +86,30 @@ if vim.g.colors_name == "onedark" then
   vim.api.nvim_set_hl(0, "SLSeparator", { fg = fg, bg = "NONE", italic = true })
   vim.api.nvim_set_hl(0, "SLError", { fg = red, bg = "NONE" })
   vim.api.nvim_set_hl(0, "SLWarning", { fg = yellow, bg = "NONE" })
+elseif vim.g.colors_name == "everforest" then
+  bg = "#292e32"
+  fg = "#D3C6AA"
+  red = "#d98382"
+  yellow = "#d6bd87"
+  gray = "#30383b"
+  purple = "#cd9bb4"
+  blue = "#8cb9b4"
+  cyan = "#90bf95"
+  green = "#acbf87"
+  white = "#d0c7af"
+
+  vim.api.nvim_set_hl(0, "SLGitIcon", { fg = yellow, bg = gray })
+  vim.api.nvim_set_hl(0, "SLBranchName", { fg = fg, bg = gray, bold = false })
+  vim.api.nvim_set_hl(0, "SLSeparator", { fg = fg, bg = "NONE", italic = true })
+  vim.api.nvim_set_hl(0, "SLSep", { fg = gray, bg = bg })
+  vim.api.nvim_set_hl(0, "SLError", { fg = red, bg = "NONE" })
+  vim.api.nvim_set_hl(0, "SLWarning", { fg = yellow, bg = "NONE" })
+  vim.api.nvim_set_hl(0, "SLLSP", { fg = gray, bg = bg })
+  vim.api.nvim_set_hl(0, "StatusLine", { fg = fg, bg = bg })
+  vim.api.nvim_set_hl(0, "SLProgress", { fg = purple, bg = gray })
+  vim.api.nvim_set_hl(0, "SLLocation", { fg = blue, bg = gray })
+  vim.api.nvim_set_hl(0, "SLIndent", { fg = white, bg = gray })
+  vim.api.nvim_set_hl(0, "SLFT", { fg = cyan, bg = gray })
 end
 
 local hl_str = function(str, hl)
