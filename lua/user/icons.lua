@@ -37,8 +37,8 @@ return {
   documents = {
     File = " ",
     Files = " ",
-    Folder = " ",
-    OpenFolder = " ",
+    Folder = " ",
+    OpenFolder = " ",
   },
   git = {
     Add = " ",
