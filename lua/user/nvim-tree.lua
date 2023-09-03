@@ -78,8 +78,8 @@ return {
         folder = {
           arrow_open = icons.ui.ArrowOpen,
           arrow_closed = icons.ui.ArrowClosed,
-          default = "",
-          open = "",
+          default = "󰉋",
+          open = "",
           empty = "",
           empty_open = "",
           symlink = "",

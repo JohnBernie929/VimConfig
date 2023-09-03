@@ -12,6 +12,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local opts = {
+  ui = {
+    border = "rounded",
+  },
+}
+
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 --vim.cmd([[
 --augroup packer_user_config
@@ -27,7 +33,6 @@ if not status_ok then
 end
 
 lazy.setup({
-  -- Install your plugins here
   { "folke/lazy.nvim", tag = "stable" },
   { "nvim-lua/plenary.nvim" }, -- Useful lua functions used by lots of plugins
   {
@@ -173,12 +178,19 @@ lazy.setup({
   { "williamboman/mason.nvim", lazy = true }, -- simple to use language server installer
   { "williamboman/mason-lspconfig.nvim", lazy = true },
   { "jose-elias-alvarez/null-ls.nvim", lazy = true }, -- for formatters and linters
-  { "j-hui/fidget.nvim" },
+  {
+    "j-hui/fidget.nvim",
+    tag = "legacy",
+    event = "LspAttach",
+    opts = {},
+    lazy = true,
+    enabled = true,
+  },
   { "lvimuser/lsp-inlayhints.nvim", lazy = true },
   { "RRethy/vim-illuminate", event = "User FileOpened" },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
   { "Exafunction/codeium.vim" },
-  { "ray-x/lsp_signature.nvim" },
+  { "ray-x/lsp_signature.nvim", opts = {} },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
@@ -228,8 +240,4 @@ lazy.setup({
     end,
     ft = { "rust", "rs" },
   },
-}, {
-  ui = {
-    border = "rounded",
-  },
-})
+}, opts)
