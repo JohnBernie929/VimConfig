@@ -5,5 +5,6 @@ return {
         typeCheckingMode = "off",
       },
     },
+    inlayHints = true,
   },
 }
