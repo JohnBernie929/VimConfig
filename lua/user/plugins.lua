@@ -40,7 +40,7 @@ lazy.setup({
   {
     "akinsho/bufferline.nvim",
     event = "User FileOpened",
-    enabled = false,
+    enabled = true,
   },
   { "moll/vim-bbye" },
   {
