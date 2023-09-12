@@ -114,7 +114,12 @@ lazy.setup({
   { "neanias/everforest-nvim", lazy = false },
 
   -- Color
-  { "NvChad/nvim-colorizer.lua" },
+  {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+      require "user.colorizer"
+    end,
+  },
   { "nvim-colortils/colortils.nvim" },
 
   -- Utility
@@ -156,15 +161,21 @@ lazy.setup({
   { "jose-elias-alvarez/null-ls.nvim", lazy = true }, -- for formatters and linters
   {
     "j-hui/fidget.nvim",
+    branch = "legacy",
     config = function()
       require "user.fidget"
     end,
-    enabled = false,
+    enabled = true,
   },
   { "lvimuser/lsp-inlayhints.nvim", lazy = true },
   { "RRethy/vim-illuminate", event = "User FileOpened" },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
-  -- { "Exafunction/codeium.vim" },
+  {
+    "Exafunction/codeium.vim",
+    config = function()
+      require "user.codeium"
+    end,
+  },
 
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
