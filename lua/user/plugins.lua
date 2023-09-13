@@ -181,9 +181,14 @@ lazy.setup({
   { "nvim-telescope/telescope.nvim" },
 
   -- Treesitter
-  { "nvim-treesitter/nvim-treesitter" },
-  { "windwp/nvim-ts-autotag" },
-  { "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    dependencies = {
+      { "windwp/nvim-ts-autotag" },
+      { "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
+    },
+  },
 
   -- Git
   { "lewis6991/gitsigns.nvim" },
