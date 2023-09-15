@@ -74,9 +74,11 @@ lazy.setup({
   { "karb94/neoscroll.nvim" },
   {
     "folke/zen-mode.nvim",
+    event = "VeryLazy",
     config = function()
       require "user.zen-mode"
     end,
+    lazy = true,
   },
   { "nacro90/numb.nvim" },
 
@@ -135,16 +137,22 @@ lazy.setup({
   {
     "ghillb/cybu.nvim",
     event = "User FileOpened",
+    config = function()
+      require "user.cybu"
+    end,
     lazy = true,
+    enabled = false,
   },
 
   -- Cmp
-  { "hrsh7th/nvim-cmp", lazy = true }, -- The completion plugin
-  { "hrsh7th/cmp-buffer", lazy = true }, -- buffer completions
+  { "hrsh7th/nvim-cmp" }, -- The completion plugin
+  { "hrsh7th/cmp-buffer" }, -- buffer completions
   { "hrsh7th/cmp-path" }, -- path completions
-  { "saadparwaiz1/cmp_luasnip", lazy = true }, -- snippet completions
-  { "hrsh7th/cmp-nvim-lsp", lazy = true },
-  { "hrsh7th/cmp-nvim-lua", lazy = true },
+  { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/cmp-nvim-lua" },
+  { "chrisgrieser/cmp-nerdfont" },
+  { "hrsh7th/cmp-emoji" },
 
   -- Snippets
   {
@@ -168,7 +176,11 @@ lazy.setup({
     enabled = true,
   },
   { "lvimuser/lsp-inlayhints.nvim", lazy = true },
-  { "RRethy/vim-illuminate", event = "User FileOpened" },
+  {
+    "RRethy/vim-illuminate",
+    event = "User FileOpened",
+    lazy = true,
+  },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
   {
     "Exafunction/codeium.vim",
