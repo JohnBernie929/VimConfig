@@ -26,7 +26,7 @@ configs.setup({
 	},
 	autotag = {
 		enable = true,
-		filetypes = { "html", "xml" },
+		filetypes = { "html", "xml", "javascript" },
 	},
 	indent = { enable = true, disable = { "python", "css" } },
 })

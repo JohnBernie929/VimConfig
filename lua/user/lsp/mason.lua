@@ -11,6 +11,7 @@ local servers = {
 	"intelephense",
 	"emmet_ls",
 	"rust_analyzer",
+  "tailwindcss"
 }
 
 local settings = {
