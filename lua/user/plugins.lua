@@ -62,7 +62,10 @@ lazy.setup({
     event = "VimEnter",
   },
   { "lewis6991/impatient.nvim" },
-  { "lukas-reineke/indent-blankline.nvim" },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+  },
   {
     "goolord/alpha-nvim",
     event = "VimEnter",

@@ -1,6 +1,6 @@
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
-	return
+  return
 end
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -8,21 +8,22 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
-null_ls.setup({
-	debug = false,
-	sources = {
-		formatting.prettierd.with({
-			extra_args = function()
-				if vim.fs.dirname(vim.fs.find({ ".prettierrc", ".prettierrc.js" }, { upward = true })[1]) then
-					return nil
-				end
+null_ls.setup {
+  debug = false,
+  sources = {
+    formatting.prettierd.with {
+      extra_args = function()
+        if vim.fs.dirname(vim.fs.find({ ".prettierrc", ".prettierrc.js" }, { upward = true })[1]) then
+          return nil
+        end
 
-				return { "--no-semi", "--single-quote", "--jsx-single-quote" } -- your extra args
-			end,
-		}),
-		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.stylua,
-		formatting.beautysh.with({ extra_args = { "--indent-size", "2" } }),
-		-- diagnostics.flake8
-	},
-})
+        return { "--no-semi", "--single-quote", "--jsx-single-quote" } -- your extra args
+      end,
+    },
+    formatting.black.with { extra_args = { "--fast" } },
+    formatting.stylua,
+    formatting.beautysh.with { extra_args = { "--indent-size", "2" } },
+    -- diagnostics.eslint_d,
+    -- diagnostics.flake8
+  },
+}
