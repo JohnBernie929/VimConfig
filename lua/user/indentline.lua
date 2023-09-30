@@ -65,7 +65,6 @@ ibl.setup {
   },
   scope = {
     highlight = highlight,
-    enabled = true,
   },
   exclude = {
     filetypes = { "help", "startify", "dashboard", "packer", "neogitstatus", "NvimTree", "Trouble" },
