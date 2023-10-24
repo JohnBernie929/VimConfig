@@ -118,7 +118,7 @@ lazy.setup({
 
   -- Color
   { "NvChad/nvim-colorizer.lua" },
-  { "nvim-colortils/colortils.nvim" },
+  -- { "nvim-colortils/colortils.nvim" },
 
   -- Utility
   {
@@ -181,7 +181,7 @@ lazy.setup({
   { "jose-elias-alvarez/null-ls.nvim", lazy = true }, -- for formatters and linters
   {
     "j-hui/fidget.nvim",
-    tag = "legacy",
+    branch = "legacy",
     event = "LspAttach",
     opts = {},
     lazy = true,
