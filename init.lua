@@ -30,5 +30,8 @@ spec "user.project"
 spec "user.toggleterm"
 spec "user.bufdelete"
 
+-- Extras
 spec "user.extras.bufferline"
+spec "user.extras.jaq"
+
 require "user.lazy"
