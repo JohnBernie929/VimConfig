@@ -56,7 +56,7 @@ function M.config()
     local direction = exec[4]
 
     local opts = {
-      cmd = exec[1] or vim.o.shell,
+      cmd = exec[1] or "pwsh",
       keymap = exec[2],
       label = exec[3],
       count = i + 100,
@@ -81,7 +81,7 @@ function M.config()
     persist_size = false,
     direction = "float",
     close_on_exit = true, -- close the terminal window when the process exits
-    shell = nil, -- change the default shell
+    shell = "pwsh", -- change the default shell
     float_opts = {
       border = "rounded",
       winblend = 0,

@@ -15,6 +15,9 @@ keymap("n", "<m-k>", "<C-w>k", opts)
 keymap("n", "<m-l>", "<C-w>l", opts)
 keymap("n", "<m-tab>", "<c-6>", opts)
 
+keymap("n", "<C-h>", "<cmd>BufferLineCyclePrev<cr>", opts)
+keymap("n", "<C-l>", "<cmd>BufferLineCycleNext<cr>", opts)
+
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 keymap("n", "*", "*zz", opts)
