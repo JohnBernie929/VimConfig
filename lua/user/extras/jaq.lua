@@ -18,7 +18,7 @@ function M.config()
         python = "python3 %",
         -- rust = "rustc % && ./$fileBase && rm $fileBase",
         rust = "cargo run",
-        cpp = "g++ % -o $fileBase && ./$fileBase",
+        cpp = "g++ % -o $fileBase && .\\$fileBase",
         go = "go run %",
         sh = "sh %",
       },
@@ -79,4 +79,8 @@ function M.config()
   }
 end
 
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+
+keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
 return M
