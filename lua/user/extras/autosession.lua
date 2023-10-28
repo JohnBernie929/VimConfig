@@ -36,7 +36,7 @@ function M.config()
     auto_session_use_git_branch = false,
     auto_session_root_dir = vim.fn.stdpath "data" .. "/sessions/",
     auto_session_enable_last_session = false,
-    bypass_session_save_file_types = { "alpha" },
+    bypass_session_save_file_types = { "alpha", "NvimTree" },
 
     -- ⚠️ This will only work if Telescope.nvim is installed
     -- The following are already the default values, no need to provide them if these are already the settings you want.
