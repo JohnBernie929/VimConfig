@@ -170,7 +170,7 @@ lazy.setup({
   { "neovim/nvim-lspconfig", lazy = true }, -- enable LSP
   { "williamboman/mason.nvim", lazy = true }, -- simple to use language server installer
   { "williamboman/mason-lspconfig.nvim", lazy = true },
-  { "jose-elias-alvarez/null-ls.nvim", lazy = true }, -- for formatters and linters
+  { "nvimtools/none-ls.nvim", lazy = true }, -- for formatters and linters
   {
     "j-hui/fidget.nvim",
     branch = "legacy",
