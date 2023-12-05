@@ -26,6 +26,7 @@ configs.setup({
 	},
 	autotag = {
 		enable = true,
+    enable_close_on_slash = false,
 		filetypes = { "html", "xml", "javascript", "javascriptreact" },
 	},
 	indent = { enable = true, disable = { "python", "css" } },
