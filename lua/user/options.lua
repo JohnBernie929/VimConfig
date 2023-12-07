@@ -34,14 +34,18 @@ local options = {
   linebreak = true,                        -- companion to wrap, don't split words
   scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
-  guifont = "JetbrainsMono NF:h17", -- the font used in graphical neovim applications
+  guifont = "JetbrainsMono NF:h17",        -- the font used in graphical neovim applications
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
-  inccommand  = "split"
+  inccommand  = "split",
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+-- Neovide
+vim.g.neovide_transparency = 0.9
+vim.g.neovide_cursor_vfx_mode = "torpedo"
 
 -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
 vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
