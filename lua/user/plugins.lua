@@ -184,14 +184,14 @@ lazy.setup({
   { "williamboman/mason.nvim", lazy = true }, -- simple to use language server installer
   { "williamboman/mason-lspconfig.nvim", lazy = true },
   { "nvimtools/none-ls.nvim", lazy = true }, -- for formatters and linters
-  {
-    "j-hui/fidget.nvim",
-    branch = "legacy",
-    config = function()
-      require "user.fidget"
-    end,
-    enabled = true,
-  },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   branch = "legacy",
+  --   config = function()
+  --     require "user.fidget"
+  --   end,
+  --   enabled = true,
+  -- },
   { "lvimuser/lsp-inlayhints.nvim", lazy = true },
   {
     "RRethy/vim-illuminate",
@@ -229,13 +229,13 @@ lazy.setup({
       require "user.dial"
     end,
   },
-  {
-    "0x100101/lab.nvim",
-    build = "cd js && npm ci",
-    config = function()
-      require "user.lab"
-    end,
-  },
+  -- {
+  --   "0x100101/lab.nvim",
+  --   build = "cd js && npm ci",
+  --   config = function()
+  --     require "user.lab"
+  --   end,
+  -- },
 
   -- Code Runner
   { "is0n/jaq-nvim" },
