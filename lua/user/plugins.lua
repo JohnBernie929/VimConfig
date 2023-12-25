@@ -244,7 +244,7 @@ lazy.setup({
   },
 
   -- Code Runner
-  { "is0n/jaq-nvim" },
+  { "CRAG666/code_runner.nvim", config = true },
 
   {
     "folke/noice.nvim",
