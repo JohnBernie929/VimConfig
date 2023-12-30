@@ -95,17 +95,19 @@ elseif vim.g.colors_name == "everforest" then
   vim.api.nvim_set_hl(0, "SLFT", { fg = blue, bg = gray })
 elseif vim.g.colors_name == "darkplus" then
   gray = "#303030"
-  dark_gray = "#303030"
+  bg = "#1E1E1E"
+  local dark_gray = "#303030"
   red = "#bf616a"
   blue = "#5e81ac"
-  indent = "#A3BE8C"
+  local indent = "#A3BE8C"
   green = "#A3BE8C"
   cyan = "#88c0d0"
-  orange = "#C68A75"
+  local orange = "#C68A75"
   yellow = "#DCDCAA"
-  yellow_orange = "#D7BA7D"
+  local yellow_orange = "#D7BA7D"
   purple = "#B48EAD"
 
+  vim.api.nvim_set_hl(0, "StatusLine", { fg = fg, bg = bg })
   vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = dark_gray })
   vim.api.nvim_set_hl(0, "SLTermIcon", { fg = purple, bg = gray })
   vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#abb2bf", bg = dark_gray, bold = false })
@@ -119,7 +121,6 @@ elseif vim.g.colors_name == "darkplus" then
   vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#6b727f", bg = "NONE", italic = true })
   vim.api.nvim_set_hl(0, "SLError", { fg = "#bf616a", bg = "NONE" })
   vim.api.nvim_set_hl(0, "SLWarning", { fg = "#D7BA7D", bg = "NONE" })
-  vim.api.nvim_set_hl(0, "SLCopilot", { fg = "#6CC644", bg = "NONE" })
 end
 
 local hl_str = function(str, hl)

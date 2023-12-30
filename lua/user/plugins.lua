@@ -13,12 +13,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
---vim.cmd([[
---augroup packer_user_config
---autocmd!
---autocmd BufWritePost plugins.lua source <afile> | PackerSync
---augroup end
---]])
+vim.cmd([[
+  augroup packer_user_config
+  autocmd!
+  autocmd BufWritePost plugins.lua Lazy sync
+  augroup end
+]])
 
 -- Use a protected call so we don't error out on first use
 local status_ok, lazy = pcall(require, "lazy")
@@ -156,6 +156,12 @@ lazy.setup({
       "MunifTanjim/nui.nvim",
     },
   },
+  {
+    "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+  },
 
   {
     "ghillb/cybu.nvim",
@@ -246,22 +252,10 @@ lazy.setup({
   -- Code Runner
   { "CRAG666/code_runner.nvim", config = true },
 
-  {
-    "folke/noice.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-  },
-
   -- Motion
   {
     "phaazon/hop.nvim",
     event = "BufRead",
-  },
-
-  -- Clangd/C++/C
-  {
-    "cdelledonne/vim-cmake",
   },
 }, {
   ui = {
