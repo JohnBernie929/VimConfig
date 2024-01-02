@@ -233,6 +233,15 @@ lazy.setup({
 
   -- Git
   { "lewis6991/gitsigns.nvim" },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "ibhagwan/fzf-lua",
+    },
+    opts = {},
+  },
 
   -- Editing Support
   {
