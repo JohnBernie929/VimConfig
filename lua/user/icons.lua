@@ -80,6 +80,7 @@ return {
     BookMark = " ",
     Pencil = " ",
     ChevronRight = "",
+    ChevronShortDown = "",
     Table = " ",
     Calendar = " ",
     CloudDownload = " ",
@@ -100,6 +101,6 @@ return {
     Package = " ",
     CircuitBoard = " ",
     Orbit = "󰀘",
-    Planet = ""
+    Planet = "",
   },
 }
