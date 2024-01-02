@@ -162,6 +162,7 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+    n = {"<cmd>Navbuddy<cr>", "Navbuddy"},
   },
   s = {
     name = "Search",
