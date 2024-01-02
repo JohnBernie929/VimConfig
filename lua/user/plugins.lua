@@ -240,9 +240,7 @@ lazy.setup({
       "sindrets/diffview.nvim",
       "ibhagwan/fzf-lua",
     },
-    config = function()
-      require "user.neogit"
-    end,
+    opts = {},
   },
 
   -- Editing Support
