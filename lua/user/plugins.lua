@@ -136,7 +136,12 @@ lazy.setup({
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
   },
   { "rest-nvim/rest.nvim" },
-  { "SmiteshP/nvim-navbuddy" },
+  {
+    "SmiteshP/nvim-navbuddy",
+    config = function()
+      require "user.navbuddy"
+    end,
+  },
   {
     "chrisgrieser/nvim-spider",
     opts = {
@@ -155,6 +160,9 @@ lazy.setup({
     dependencies = {
       "MunifTanjim/nui.nvim",
     },
+    config = function()
+      require "user.package-info"
+    end,
   },
   {
     "folke/noice.nvim",
@@ -218,6 +226,20 @@ lazy.setup({
     end,
   },
 
+  -- DAP
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "mfussenegger/nvim-dap-python",
+      "theHamsta/nvim-dap-virtual-text",
+      "nvim-telescope/telescope-dap.nvim",
+    },
+    config = function()
+      require "user.dap"
+    end,
+  },
+
   -- Telescope
   { "nvim-telescope/telescope.nvim" },
 
@@ -259,7 +281,12 @@ lazy.setup({
   },
 
   -- Code Runner
-  { "CRAG666/code_runner.nvim", config = true },
+  {
+    "CRAG666/code_runner.nvim",
+    config = function()
+      require "user.code-runner"
+    end,
+  },
 
   -- Motion
   {
