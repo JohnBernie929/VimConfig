@@ -1,5 +1,5 @@
 local M = {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
 }
 
 function M.config()
@@ -12,8 +12,8 @@ function M.config()
       formatting.stylua,
       formatting.prettier,
       formatting.prettier.with {
-        extra_filetypes = { "toml" },
-        -- extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+        extra_filetypes = { "js", "json" },
+        extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
       },
       -- null_ls.builtins.diagnostics.eslint,
       null_ls.builtins.completion.spell,

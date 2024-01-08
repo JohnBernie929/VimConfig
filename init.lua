@@ -51,5 +51,6 @@ spec "user.extras.colorizer"
 spec "user.extras.bookmark"
 spec "user.extras.autosession"
 spec "user.extras.package-info"
+-- spec "user.extras.codeium"
 
 require "user.lazy"
