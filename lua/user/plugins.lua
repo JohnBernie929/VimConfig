@@ -275,13 +275,13 @@ lazy.setup({
       require "user.dial"
     end,
   },
-  {
-    "0x100101/lab.nvim",
-    build = "cd js && npm ci",
-    config = function()
-      require "user.lab"
-    end,
-  },
+  -- {
+  --   "0x100101/lab.nvim",
+  --   build = "cd js && npm ci",
+  --   config = function()
+  --     require "user.lab"
+  --   end,
+  -- },
 
   -- Code Runner
   {
