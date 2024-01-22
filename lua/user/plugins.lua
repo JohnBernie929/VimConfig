@@ -117,7 +117,7 @@ lazy.setup({
     dependencies = { "tjdevries/colorbuddy.nvim" },
   },
   { "neanias/everforest-nvim", lazy = false },
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = {} },
+  { "LunarVim/primer.nvim" },
 
   -- Color
   {

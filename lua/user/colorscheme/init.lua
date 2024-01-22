@@ -1,4 +1,5 @@
 local colorscheme = "tokyonight-night"
+-- local colorscheme = "primer_dark"
 -- local colorscheme = "darkplus"
 -- local colorscheme = "everforest"
 -- local colorscheme = "gruvbox"
