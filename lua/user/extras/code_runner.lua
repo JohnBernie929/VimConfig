@@ -27,4 +27,8 @@ M.config = function()
   }
 end
 
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+keymap("n", "<m-r>", ":RunCode<cr>", opts)
+
 return M
