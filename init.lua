@@ -32,7 +32,7 @@ spec "user.bufdelete"
 
 -- Extras
 spec "user.extras.bufferline"
-spec "user.extras.jaq"
+spec "user.extras.code_runner"
 spec "user.extras.minifiles"
 -- spec "user.extras.modicator"
 spec "user.extras.navbuddy"
