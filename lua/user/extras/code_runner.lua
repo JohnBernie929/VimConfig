@@ -20,7 +20,7 @@ M.config = function()
       },
       cpp = {
         "cd $dir &&",
-        "g++ $fileName -o $fileNameWithoutExt &&",
+        "g++ -std=c++14 $fileName -pipe -O2 -s -static -lm -x c++ -o $fileNameWithoutExt &&",
         "$dir/$fileNameWithoutExt",
       },
     },
