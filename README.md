@@ -1,19 +1,5 @@
 # Install
 
-## Install neovim
-
-### Ubuntu/Debian
-
-```bash
-sudo apt install neovim
-```
-
-### Arch linux/Manjaro
-
-```bash
-sudo pacman -S neovim
-```
-
 ## Download configure
 
 ```bash
