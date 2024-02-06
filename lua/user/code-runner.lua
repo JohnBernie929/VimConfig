@@ -20,7 +20,7 @@ code_runner.setup {
     },
     cpp = {
       "cd $dir &&",
-      "g++ $fileName -o $fileNameWithoutExt &&",
+      "g++ -std=c++14 -pipe -O2 -s -static -lm -x c++ $fileName -o $fileNameWithoutExt &&",
       "$dir/$fileNameWithoutExt",
     }
   },
