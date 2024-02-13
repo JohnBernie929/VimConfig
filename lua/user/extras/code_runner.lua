@@ -4,6 +4,9 @@ local M = {
 
 M.config = function()
   require("code_runner").setup {
+    term = {
+      size = 4,
+    },
     startinsert = true,
     filetype = {
       java = {
