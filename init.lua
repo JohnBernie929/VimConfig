@@ -52,5 +52,6 @@ spec "user.extras.autosession"
 spec "user.extras.package-info"
 -- spec "user.extras.codeium"
 spec "user.extras.neotab"
+spec "user.extras.autotag"
 
 require "user.lazy"
