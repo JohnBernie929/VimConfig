@@ -36,6 +36,11 @@ lazy.setup({
   { "folke/lazy.nvim", tag = "stable" },
   { "nvim-lua/plenary.nvim" }, -- Useful lua functions used by lots of plugins
   {
+        "vhyrro/luarocks.nvim",
+        priority = 1000, -- We'd like this plugin to load first out of the rest
+        config = true, -- This automatically runs `require("luarocks-nvim").setup()`
+    },
+  {
     "numToStr/Comment.nvim",
     keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
     event = "User FileOpened",
@@ -146,6 +151,7 @@ lazy.setup({
   },
   {
     "rest-nvim/rest.nvim",
+    tag = "v1.2.1",
     requires = { "nvim-lua/plenary.nvim" },
   },
 
@@ -190,7 +196,7 @@ lazy.setup({
   { "lvimuser/lsp-inlayhints.nvim", lazy = true },
   { "RRethy/vim-illuminate", event = "User FileOpened" },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
-  { "Exafunction/codeium.vim" },
+  -- { "Exafunction/codeium.vim" },
   { "ray-x/lsp_signature.nvim", opts = {} },
 
   -- Telescope
