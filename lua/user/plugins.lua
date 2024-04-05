@@ -136,7 +136,6 @@ lazy.setup({
     "folke/persistence.nvim",
     event = "BufReadPre", -- this will only start session saving when an actual file was opened
   },
-  { "rest-nvim/rest.nvim" },
   {
     "SmiteshP/nvim-navbuddy",
     config = function()
@@ -222,12 +221,12 @@ lazy.setup({
     lazy = true,
   },
   { "SmiteshP/nvim-navic", event = "User FileOpened" },
-  {
-    "Exafunction/codeium.vim",
-    config = function()
-      require "user.codeium"
-    end,
-  },
+  -- {
+  --   "Exafunction/codeium.vim",
+  --   config = function()
+  --     require "user.codeium"
+  --   end,
+  -- },
 
   -- DAP
   {
@@ -260,6 +259,7 @@ lazy.setup({
   { "lewis6991/gitsigns.nvim" },
   {
     "NeogitOrg/neogit",
+    branch = "nightly",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",

@@ -8,3 +8,5 @@ everforest.setup({
 })
 
 everforest.load()
+
+vim.api.nvim_set_hl(0, "WinBar", { bg = "#292e32" })

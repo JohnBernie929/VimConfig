@@ -22,7 +22,6 @@ null_ls.setup {
     },
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
-    formatting.beautysh.with { extra_args = { "--indent-size", "2" } },
     -- diagnostics.eslint_d,
     -- diagnostics.flake8
   },

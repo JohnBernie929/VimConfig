@@ -4,7 +4,6 @@ local servers = {
   "html",
   "tsserver",
   "pyright",
-  "bashls",
   "jsonls",
   -- "yamlls",
   "clangd",
@@ -12,8 +11,6 @@ local servers = {
   "emmet_ls",
   "rust_analyzer",
   "tailwindcss",
-  "dockerls",
-  "docker_compose_language_service",
 }
 
 local settings = {
