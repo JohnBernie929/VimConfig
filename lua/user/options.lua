@@ -45,7 +45,7 @@ for k, v in pairs(options) do
 end
 
 -- Neovide
-vim.g.neovide_transparency = 0.9
+-- vim.g.neovide_transparency = 0.9
 vim.g.neovide_cursor_vfx_mode = "torpedo"
 
 -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'

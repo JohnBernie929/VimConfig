@@ -118,6 +118,7 @@ lazy.setup({
   },
   { "neanias/everforest-nvim", lazy = false },
   { "LunarVim/primer.nvim" },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
   -- Color
   {
@@ -259,7 +260,6 @@ lazy.setup({
   { "lewis6991/gitsigns.nvim" },
   {
     "NeogitOrg/neogit",
-    branch = "nightly",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "sindrets/diffview.nvim",

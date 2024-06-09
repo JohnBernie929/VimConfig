@@ -7,7 +7,6 @@ local servers = {
   "jsonls",
   -- "yamlls",
   "clangd",
-  "intelephense",
   "emmet_ls",
   "rust_analyzer",
   "tailwindcss",

@@ -2,7 +2,8 @@
 -- local colorscheme = "primer_dark"
 -- local colorscheme = "darkplus"
 local colorscheme = "everforest"
--- local colorscheme = "gruvbox"
+-- local colorscheme = "neosolarized"
+-- local colorscheme = "catppuccin-mocha"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
