@@ -30,6 +30,7 @@ ls.add_snippets(nil, {
         "typedef vector<vl> vvl;",
         "",
         "#define el cout << '\\n'",
+        "#define er cerr << '\\n'",
         "#define sz(x) x.size()",
         "#define all(x) x.begin(), x.end()",
         "#define f0(i, n) for (int i = 0; i < n; i++)",
