@@ -1,37 +1,26 @@
 local M = {
   "CRAG666/code_runner.nvim",
+  event = "VeryLazy",
 }
 
-M.config = function()
+function M.config()
+  local opts = { noremap = true, silent = true }
+  local keymap = vim.api.nvim_set_keymap
+
+  keymap("n", "<m-r>", ":RunCode<cr>", opts)
+  keymap("n", "<M-C-n>", ":RunCode<cr>", opts)
+
   require("code_runner").setup {
-    term = {
-      size = 4,
-    },
     startinsert = true,
+
     filetype = {
-      java = {
-        "cd $dir &&",
-        "javac $fileName &&",
-        "java $fileNameWithoutExt",
-      },
-      python = "python3 -u",
-      typescript = "deno run",
-      rust = {
-        "cd $dir &&",
-        "rustc $fileName &&",
-        "$dir/$fileNameWithoutExt",
-      },
       cpp = {
         "cd $dir &&",
-        "g++ -std=c++14 $fileName -pipe -O2 -s -static -lm -x c++ -o $fileNameWithoutExt &&",
-        "$dir/$fileNameWithoutExt",
+        "g++ -std=c++14 -pipe -O2 -s -static -lm -x c++ $fileName -o $fileNameWithoutExt.bin &&",
+        "$dir/$fileNameWithoutExt.bin",
       },
     },
   }
 end
-
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
-keymap("n", "<M-C-n>", ":RunCode<cr>", opts)
 
 return M

@@ -5,6 +5,10 @@ local M = {
 }
 
 function M.config()
+  local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
+  keymap("n", "<c-l>", ":bnext<cr>", opts)
+  keymap("n", "<c-h>", ":bprevious<cr>", opts)
   require("bufferline").setup {
     options = {
       numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,

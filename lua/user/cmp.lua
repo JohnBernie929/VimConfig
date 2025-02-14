@@ -54,8 +54,11 @@ function M.config()
 
   local cmp = require "cmp"
   local luasnip = require "luasnip"
-  require("luasnip/loaders/from_vscode").lazy_load()
-  require("luasnip").filetype_extend("typescriptreact", { "html" })
+  local loader_vscode = require "luasnip.loaders.from_vscode"
+  local loader_lua = require "luasnip.loaders.from_lua"
+  loader_vscode.lazy_load()
+  require("user.luasnip");
+  require('user.snippets.cpp')
 
   local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -138,6 +141,7 @@ function M.config()
     },
     formatting = {
       fields = { "kind", "abbr", "menu" },
+      expandable_indicator = false,
       format = function(entry, vim_item)
         vim_item.kind = icons.kind[vim_item.kind]
         vim_item.menu = ({

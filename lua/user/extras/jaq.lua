@@ -12,13 +12,13 @@ function M.config()
 
       -- Uses external commands such as 'g++' and 'cargo'
       external = {
-        typescript = "ts-node %",
+        typescript = "bun %",
         javascript = "node %",
         -- markdown = "glow %",
         python = "python3 %",
         -- rust = "rustc % && ./$fileBase && rm $fileBase",
-        rust = "cargo run",
-        cpp = "g++ % -o $fileBase && .\\$fileBase",
+        rust = "cargo run -q",
+        cpp = "g++ % -o $fileBase && ./$fileBase",
         go = "go run %",
         sh = "sh %",
       },
@@ -35,7 +35,7 @@ function M.config()
       default = "terminal",
 
       -- Start in insert mode
-      startinsert = true,
+      startinsert = false,
 
       -- Use `wincmd p` on startup
       wincmd = false,
@@ -67,20 +67,32 @@ function M.config()
 
       terminal = {
         -- Position of terminal
-        position = "bot",
+        position = "vert",
 
         -- Open the terminal without line numbers
         line_no = false,
 
         -- Size of terminal
-        size = 10,
+        size = 50,
       },
     },
   }
+
+  local opts = { noremap = true, silent = true }
+  local keymap = vim.api.nvim_set_keymap
+
+  keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
+
+  vim.api.nvim_create_autocmd({ "FileType" }, {
+    pattern = { "Jaq" },
+    callback = function()
+      vim.cmd [[
+      nnoremap <silent> <buffer> <m-r> :close<CR>
+      " nnoremap <silent> <buffer> <m-r> <NOP>
+      set nobuflisted
+    ]]
+    end,
+  })
 end
 
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
-
-keymap("n", "<m-r>", ":silent only | Jaq<cr>", opts)
 return M

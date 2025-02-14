@@ -1,10 +1,18 @@
 local M = {
   "nvim-tree/nvim-tree.lua",
-  event = "VeryLazy",
-  commit = "40b9b887d090d5da89a84689b4ca0304a9649f62",
+  -- event = "VeryLazy",
 }
 
 function M.config()
+  local wk = require "which-key"
+  wk.add {
+    {
+      "<leader>e",
+      "<cmd>NvimTreeToggle<CR>",
+      desc = "Explorer",
+    },
+  }
+
   local function my_on_attach(bufnr)
     local api = require "nvim-tree.api"
 
@@ -15,18 +23,22 @@ function M.config()
     api.config.mappings.default_on_attach(bufnr)
 
     vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
+    vim.keymap.set("n", "o", api.node.open.edit, opts "Open")
+    vim.keymap.set("n", "<CR>", api.node.open.edit, opts "Open")
     vim.keymap.set("n", "h", api.node.navigate.parent_close, opts "Close Directory")
     vim.keymap.set("n", "v", api.node.open.vertical, opts "Open: Vertical Split")
-    vim.keymap.set("n", "s", api.node.open.horizontal, opts("Open: Horizontal Split"))
-    vim.keymap.del("n", "<C-k>", { buffer = bufnr })
-    vim.keymap.set("n", "<S-k>", api.node.open.preview, opts "Open Preview")
+    vim.keymap.set("n", "s", api.node.open.horizontal, opts "Open: Horizontal Split")
   end
 
   local icons = require "user.icons"
 
   require("nvim-tree").setup {
     on_attach = my_on_attach,
+    hijack_netrw = false,
     sync_root_with_cwd = true,
+    view = {
+      relativenumber = true,
+    },
     renderer = {
       add_trailing = false,
       group_empty = false,
@@ -84,22 +96,22 @@ function M.config()
       ignore_list = {},
     },
 
-    diagnostics = {
-      enable = true,
-      show_on_dirs = false,
-      show_on_open_dirs = true,
-      debounce_delay = 50,
-      severity = {
-        min = vim.diagnostic.severity.HINT,
-        max = vim.diagnostic.severity.ERROR,
-      },
-      icons = {
-        hint = icons.diagnostics.BoldHint,
-        info = icons.diagnostics.BoldInformation,
-        warning = icons.diagnostics.BoldWarning,
-        error = icons.diagnostics.BoldError,
-      },
-    },
+    -- diagnostics = {
+    --   enable = true,
+    --   show_on_dirs = false,
+    --   show_on_open_dirs = true,
+    --   debounce_delay = 50,
+    --   severity = {
+    --     min = vim.diagnostic.severity.HINT,
+    --     max = vim.diagnostic.severity.ERROR,
+    --   },
+    --   icons = {
+    --     hint = icons.diagnostics.BoldHint,
+    --     info = icons.diagnostics.BoldInformation,
+    --     warning = icons.diagnostics.BoldWarning,
+    --     error = icons.diagnostics.BoldError,
+    --   },
+    -- },
   }
 end
 

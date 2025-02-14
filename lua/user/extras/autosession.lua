@@ -36,7 +36,7 @@ function M.config()
     auto_session_use_git_branch = false,
     auto_session_root_dir = vim.fn.stdpath "data" .. "/sessions/",
     auto_session_enable_last_session = false,
-    bypass_session_save_file_types = { "alpha", "NvimTree" },
+    bypass_session_save_file_types = { "alpha" },
 
     -- ⚠️ This will only work if Telescope.nvim is installed
     -- The following are already the default values, no need to provide them if these are already the settings you want.
@@ -53,6 +53,19 @@ function M.config()
   vim.keymap.set("n", "<C-s>", require("auto-session.session-lens").search_session, {
     noremap = true,
   })
+
+  local wk = require "which-key"
+  wk.add {
+    {
+      "<leader>S",
+      group = "Session",
+    },
+    {
+      "<leader>Ss",
+      cmd = ":SessionSave<cr>",
+      desc = "Session Save",
+    },
+  }
 end
 
 return M

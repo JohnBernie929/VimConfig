@@ -19,16 +19,18 @@ function M.config()
       javascriptreact = "rainbow-parens",
       tsx = "rainbow-parens",
       jsx = "rainbow-parens",
+      html = "rainbow-parens",
+      templ = "rainbow-parens",
     },
     highlight = {
 
-      -- "TSRainbowRed",
+      "TSRainbowYellow",
+      "TSRainbowViolet",
       "TSRainbowBlue",
+      -- "TSRainbowRed",
       -- "TSRainbowOrange",
       -- "TSRainbowCoral",
-      "TSRainbowPink",
-      "TSRainbowYellow",
-      -- "TSRainbowViolet",
+      -- "TSRainbowPink",
       -- "TSRainbowGreen",
 
       -- TODO: define these in colorscheme

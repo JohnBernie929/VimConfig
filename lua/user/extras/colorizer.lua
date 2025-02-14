@@ -1,5 +1,5 @@
 local M = {
-  "NvChad/nvim-colorizer.lua",
+  "ChristianChiarulli/nvim-colorizer.lua",
   event = { "BufReadPost", "BufNewFile" },
 }
 
@@ -18,6 +18,7 @@ function M.config()
     user_default_options = {
       names = false,
       rgb_fn = true,
+      hsl_fn = true,
       tailwind = "both",
     },
     buftypes = {},
