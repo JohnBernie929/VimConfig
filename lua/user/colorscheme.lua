@@ -1,5 +1,6 @@
 local M = {
   -- "LunarVim/primer.nvim",
+  -- "ellisonleao/gruvbox.nvim",
   "LunarVim/darkplus.nvim",
   lazy = false, -- make sure we load this during startup if it is your main colorscheme
   priority = 1000, -- make sure to load this before all the other start plugins
@@ -53,7 +54,7 @@ function M.config()
   -- #87ffaf
   -- #ffd8ff
 
-  -- vim.cmd.colorscheme "primer_dark"
+  -- vim.cmd.colorscheme "gruvbox"
   -- vim.cmd.colorscheme "darkplus"
 
   local c = {
@@ -337,6 +338,7 @@ function M.config()
   hl(0, "TelescopeSelection", { fg = "NONE", bg = c.select })
   hl(0, "TelescopeSelectionCaret", { fg = c.ui_blue, bg = c.select })
   hl(0, "TelescopeMatching", { fg = c.match, bg = "NONE", bold = true, italic = true })
+
 end
 
 return M

@@ -15,9 +15,7 @@ ls.add_snippets(nil, {
   cpp = {
     snip("init2", {
       text {
-        '#pragma GCC optimize("unroll-loops")',
-        '#pragma GCC optimize("Ofast,O1,O2,O3")',
-        '#pragma GCC optimize("inline")',
+        '#pragma GCC optimize("O3")',
         "#include <bits/stdc++.h>",
         "using namespace std;",
         "const int N = 1e6 + 7;",
